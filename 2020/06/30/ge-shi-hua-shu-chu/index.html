@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown学习, HAC����дд">
+    <meta name="keywords" content="格式化输出, HAC无聊写写">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Markdown学习 | HAC����дд</title>
+    <title>格式化输出 | HAC无聊写写</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,8 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 
 <body>
@@ -41,7 +42,7 @@
                     
                     <img src="/medias/logo.jpg" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">HAC����дд</span>
+                    <span class="logo-span">HAC无聊写写</span>
                 </a>
             </div>
             
@@ -106,17 +107,6 @@
   
   <li class="hide-on-med-and-down nav-item">
     
-    <a href="/contact" class="waves-effect waves-light">
-      
-      <i class="fas fa-comments" style="zoom: 0.6;"></i>
-      
-      <span>留言板</span>
-    </a>
-    
-  </li>
-  
-  <li class="hide-on-med-and-down nav-item">
-    
     <a href="/friends" class="waves-effect waves-light">
       
       <i class="fas fa-address-book" style="zoom: 0.6;"></i>
@@ -140,7 +130,7 @@
         
         <img src="/medias/logo.jpg" class="logo-img circle responsive-img">
         
-        <div class="logo-name">HAC����дд</div>
+        <div class="logo-name">HAC无聊写写</div>
         <div class="logo-desc">
             
             Never really desperate, only the lost of the soul.
@@ -209,17 +199,6 @@
         
         <li class="m-nav-item">
 	  
-		<a href="/contact" class="waves-effect waves-light">
-			
-			    <i class="fa-fw fas fa-comments"></i>
-			
-			留言板
-		</a>
-          
-        </li>
-        
-        <li class="m-nav-item">
-	  
 		<a href="/friends" class="waves-effect waves-light">
 			
 			    <i class="fa-fw fas fa-address-book"></i>
@@ -245,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown学习</h1>
+                    <h1 class="description center-align post-title">格式化输出</h1>
                 </div>
             </div>
         </div>
@@ -379,12 +358,17 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-28
+                    2020-06-30
                 </div>
                 
 
                 
 
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    106
+                </div>
                 
 
                 
@@ -395,171 +379,52 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Markdown学习"><a href="#Markdown学习" class="headerlink" title="Markdown学习"></a>Markdown学习</h1><h3 id="1-什么是Markdown？"><a href="#1-什么是Markdown？" class="headerlink" title="1.什么是Markdown？"></a>1.什么是Markdown？</h3><p>​        Markdown是一种可以使用普通文本编辑器编写的<a href="https://baike.baidu.com/item/标记语言/5964436" target="_blank" rel="noopener">标记语言</a>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p>
-<p>​        Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p>
-<h3 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2.基本语法"></a>2.基本语法</h3><hr>
-<h5 id="2-1常用语法："><a href="#2-1常用语法：" class="headerlink" title="2.1常用语法："></a>2.1常用语法：</h5><table>
+                <h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><h4 id="System-out-printf-方法的使用"><a href="#System-out-printf-方法的使用" class="headerlink" title="System.out.printf(); 方法的使用"></a>System.out.printf(); 方法的使用</h4><table>
 <thead>
 <tr>
-<th>描述</th>
-<th align="center">输入</th>
-<th align="center">显示效果</th>
+<th>占位符</th>
+<th>说明</th>
+<th>限定位宽</th>
+<th>输出</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>斜体</td>
-<td align="center">*文本*</td>
-<td align="center"><em>嘤嘤嘤</em></td>
+<td>%s</td>
+<td>以字符串的形式输出</td>
+<td>%8s</td>
+<td>最多8个字符</td>
 </tr>
 <tr>
-<td>粗体</td>
-<td align="center">**文本**</td>
-<td align="center"><strong>嘤嘤嘤</strong></td>
+<td>%f</td>
+<td>以浮点类型的形式输出</td>
+<td>%[位宽] (.) [保留小数个数]f</td>
+<td></td>
 </tr>
 <tr>
-<td>斜体加粗</td>
-<td align="center">***文本***</td>
-<td align="center"><strong><em>嘤嘤嘤</em></strong></td>
+<td>%c</td>
+<td>以字符类型的形式输出</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>删除线</td>
-<td align="center">~<del>文本</del></td>
-<td align="center"><del>嘤嘤嘤</del></td>
+<td>%d</td>
+<td>以十进制整数形式输出</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>链接</td>
-<td align="center">[百度一下](<a href="https://www.baidu.com\" target="_blank" rel="noopener">https://www.baidu.com\</a>)</td>
-<td align="center"><a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下</a></td>
+<td>%o</td>
+<td>以八进制整数形式输出</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
-<td>图片</td>
-<td align="center">![图片下方文字](图片地址 &quot;鼠标悬停时显示的文字&quot;)</td>
-<td align="center">ps: 悬停文字可不要</td>
-</tr>
-<tr>
-<td>无序列表</td>
-<td align="center">* 文本</td>
-<td align="center">ps:- 文本 或 + 文本 也行</td>
-</tr>
-<tr>
-<td>有序列表</td>
-<td align="center">1. 文本</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td>引用</td>
-<td align="center">&gt; 文本</td>
-<td align="center">可以嵌套，如&gt;&gt;、&gt;&gt;&gt;……</td>
-</tr>
-<tr>
-<td>分割线</td>
-<td align="center">— 或 ***(3个或以上)</td>
-<td align="center"></td>
-</tr>
-<tr>
-<td>代码</td>
-<td align="center">`单行`          ```多行```</td>
-<td align="center"></td>
+<td>%x</td>
+<td>以十六进制整数形式输出</td>
+<td></td>
+<td></td>
 </tr>
 </tbody></table>
-<blockquote>
-<blockquote>
-<p>百度百科（引用示例：&gt;&gt;）</p>
-</blockquote>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">多行代码展示</span><br></pre></td></tr></table></figure>
-
-<p><code>单行代码展示</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">|表头|表头|表头|</span><br><span class="line">|---|:--:|---:|</span><br><span class="line">|内容|内容|内容|</span><br><span class="line">|内容|内容|内容|</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个 </span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：表示文字居中</span><br><span class="line">-右边加：表示文字居右</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="2-2-转义字符："><a href="#2-2-转义字符：" class="headerlink" title="2.2 转义字符："></a>2.2 转义字符：</h5><ol>
-<li><p>特殊字符需要用转义字符 \ 输出。 </p>
-</li>
-<li><p>HTML中的转义字符：</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>显示结果</th>
-<th>描述</th>
-<th>输入</th>
-<th>实体编号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>&nbsp;</td>
-<td>空格</td>
-<td>&amp;nbsp;</td>
-<td>&amp;#160;</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小于</td>
-<td>&amp;lt;</td>
-<td>&amp;#60;</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大于</td>
-<td>&amp;gt;</td>
-<td>&amp;#62;</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>和</td>
-<td>&amp;amp;</td>
-<td>&amp;#38;</td>
-</tr>
-<tr>
-<td>&quot;</td>
-<td>双引</td>
-<td>&amp;quot;</td>
-<td>&amp;#34;</td>
-</tr>
-<tr>
-<td>&#39;</td>
-<td>单引</td>
-<td>&amp;apos;</td>
-<td>&amp;#39;</td>
-</tr>
-<tr>
-<td>&divide;</td>
-<td>除号</td>
-<td>&amp;divide;</td>
-<td>&amp;#247;</td>
-</tr>
-<tr>
-<td>&copy;</td>
-<td>版权</td>
-<td>&amp;copy;</td>
-<td>&amp;#169;</td>
-</tr>
-<tr>
-<td>&reg;</td>
-<td>注册商标</td>
-<td>&amp;reg;</td>
-<td>&amp;#174;</td>
-</tr>
-</tbody></table>
-<hr>
-<h5 id="2-3-标题"><a href="#2-3-标题" class="headerlink" title="2.3 标题"></a>2.3 标题</h5><p>对应个数的 “#” 来表示标题级别。</p>
-<p># 一级标题（对应&lt;h1 /&gt;）</p>
-<p>## 二级标题（对应&lt;h2 /&gt;）</p>
-<p>### 三级标题（对应&lt;h3 /&gt;）</p>
-<p>#### 四级标题（对应&lt;h4 /&gt;）</p>
-<p>##### 五级标题（对应&lt;h5 /&gt;）</p>
-<p>###### 六级标题（对应&lt;h6 /&gt;）</p>
-<hr>
-<h5 id="2-4-数学公式"><a href="#2-4-数学公式" class="headerlink" title="2.4 数学公式"></a>2.4 数学公式</h5><ul>
-<li>行内公式：将公式插入到本行内，符号：<code>$公式内容$</code>，如： <img src="https://www.zhihu.com/equation?tex=f%28x%29%3D%5Cfrac%7Bx%7D%7B2%7D" alt="[公式]"> 。</li>
-<li>独行公式：将公式插入到新的一行内，并且居中，符号：<code>$$公式内容$$</code> 。</li>
-</ul>
-<hr>
-<blockquote>
-<p><a href="https://zhuanlan.zhihu.com/p/150343100" target="_blank" rel="noopener">Markdown入门学习</a></p>
-</blockquote>
 
             </div>
             <hr/>
@@ -575,7 +440,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">wenah��</a>
+                    <a href="/about" rel="external nofollow noreferrer">wenah阮</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -585,7 +450,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/06/28/Markdown%E5%AD%A6%E4%B9%A0/">https://coderuan.github.io/2020/06/28/Markdown%E5%AD%A6%E4%B9%A0/</a>
+                    <a href="https://coderuan.github.io/2020/06/30/ge-shi-hua-shu-chu/">https://coderuan.github.io/2020/06/30/ge-shi-hua-shu-chu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -598,7 +463,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">wenah��</a>
+                    <a href="/about" target="_blank">wenah阮</a>
                     !
                 </span>
             </div>
@@ -788,12 +653,66 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/07/01/javascript/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
+                        
+                        <span class="card-title">JavaScript</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1. 为什么要学JavaScript？
+表单的注册 —— 表单的页面验证（减轻服务器的压力）
+页面动态效果 —— 树形菜单的使用
+页面内容的动态展示 —— 表单的动态验证、表格的动态数据
+
+2. JavaScript的特点
+HTML页面添加
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            wenah阮
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/JS/">
+                        <span class="chip bg-color">JS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/28/Markdown%E5%AD%A6%E4%B9%A0/">
+                <a href="/2020/06/28/markdown-xue-xi/">
                     <div class="card-image">
                         
                         
@@ -816,49 +735,7 @@
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
-                            wenah��
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/06/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
-                        
-                        <span class="card-title">第一篇博客</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            第一章MySQL
-
-第二章JDBC
-
-参考文献
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            wenah��
+                            wenah阮
                             
                         </span>
                     </div>
@@ -1060,10 +937,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="/about" target="_blank">wenah��</a>
+            <a href="/about" target="_blank">wenah阮</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">1.1k</span>&nbsp;字
             
             
             

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>JavaScript</title>
+      <link href="/2020/07/01/javascript/"/>
+      <url>/2020/07/01/javascript/</url>
+      
+        <content type="html"><![CDATA[<h3 id="1-为什么要学JavaScript？"><a href="#1-为什么要学JavaScript？" class="headerlink" title="1. 为什么要学JavaScript？"></a>1. 为什么要学JavaScript？</h3><ul><li>表单的注册 —— 表单的页面验证（减轻服务器的压力）</li><li>页面动态效果 —— 树形菜单的使用</li><li>页面内容的动态展示 —— 表单的动态验证、表格的动态数据</li></ul><h3 id="2-JavaScript的特点"><a href="#2-JavaScript的特点" class="headerlink" title="2. JavaScript的特点"></a>2. JavaScript的特点</h3><ul><li>HTML页面添加交互行为</li><li>语法与 Java 类似</li><li>解释性语言，可以边执行边解释</li></ul><h3 id="3-三大组成部分"><a href="#3-三大组成部分" class="headerlink" title="3. 三大组成部分"></a>3. 三大组成部分</h3><ul><li><p>ECMAScript：<a href="http://baike.baidu.com/view/3986646.htm" target="_blank" rel="noopener">Ecma国际</a>以JavaScript为基础制定了<a href="http://baike.baidu.com/view/810176.htm" target="_blank" rel="noopener">ECMAScript</a>标准。</p><ul><li>（函数）</li></ul></li><li><p>DOM：文档对象模型，简单的说，document对象和文档中其他元素</p><ul><li>（如表单、图像、超链接等）</li></ul></li><li><p>BOM：浏览器对象模型，该对象模型提供了独立于内容、可以与浏览器窗口进行互动的对象结构</p><ul><li>（弹窗）</li></ul></li></ul><h3 id="4-引入位置"><a href="#4-引入位置" class="headerlink" title="4. 引入位置"></a>4. 引入位置</h3><ul><li><p><strong>标签中直接使用</strong></p><ul><li><code>&lt;input name=&quot;btn&quot; type=&quot;button&quot; value=&quot;弹出消息框&quot; onclick=&quot;javascript:alert(&#39;欢迎你&#39;);&quot;/&gt;</code></li></ul></li><li><p><strong>&lt;head&gt;标签中调用</strong></p><ul><li><strong>内部调用</strong>  </li></ul><pre><code>&lt;script type=”text/javascript”&gt;        Javascript语句;&lt;/script&gt;</code></pre><ul><li><p><strong>外部调用</strong></p><p><code>&lt;script language=”JavaScript” src=”路径”&gt;&lt;/script&gt;</code></p></li></ul></li><li><p><strong>页面任意位置</strong></p><ul><li>需要调用的元素要保证解析完成（在body里放在需要调用的元素语句后面，最好放在末尾）</li></ul></li></ul><hr>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+            <tag> JS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>格式化输出</title>
+      <link href="/2020/06/30/ge-shi-hua-shu-chu/"/>
+      <url>/2020/06/30/ge-shi-hua-shu-chu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><h4 id="System-out-printf-方法的使用"><a href="#System-out-printf-方法的使用" class="headerlink" title="System.out.printf(); 方法的使用"></a>System.out.printf(); 方法的使用</h4><table><thead><tr><th>占位符</th><th>说明</th><th>限定位宽</th><th>输出</th></tr></thead><tbody><tr><td>%s</td><td>以字符串的形式输出</td><td>%8s</td><td>最多8个字符</td></tr><tr><td>%f</td><td>以浮点类型的形式输出</td><td>%[位宽] (.) [保留小数个数]f</td><td></td></tr><tr><td>%c</td><td>以字符类型的形式输出</td><td></td><td></td></tr><tr><td>%d</td><td>以十进制整数形式输出</td><td></td><td></td></tr><tr><td>%o</td><td>以八进制整数形式输出</td><td></td><td></td></tr><tr><td>%x</td><td>以十六进制整数形式输出</td><td></td><td></td></tr></tbody></table>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Markdown学习</title>
+      <link href="/2020/06/28/markdown-xue-xi/"/>
+      <url>/2020/06/28/markdown-xue-xi/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Markdown学习"><a href="#Markdown学习" class="headerlink" title="Markdown学习"></a>Markdown学习</h1><h3 id="1-什么是Markdown？"><a href="#1-什么是Markdown？" class="headerlink" title="1.什么是Markdown？"></a>1.什么是Markdown？</h3><p>​        Markdown是一种可以使用普通文本编辑器编写的<a href="https://baike.baidu.com/item/标记语言/5964436" target="_blank" rel="noopener">标记语言</a>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><p>​        Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p><h3 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2.基本语法"></a>2.基本语法</h3><hr><h4 id="2-1常用语法："><a href="#2-1常用语法：" class="headerlink" title="2.1常用语法："></a>2.1常用语法：</h4><table><thead><tr><th>描述</th><th align="center">输入</th><th align="center">显示效果</th></tr></thead><tbody><tr><td>斜体</td><td align="center">*文本*</td><td align="center"><em>嘤嘤嘤</em></td></tr><tr><td>粗体</td><td align="center">**文本**</td><td align="center"><strong>嘤嘤嘤</strong></td></tr><tr><td>斜体加粗</td><td align="center">***文本***</td><td align="center"><strong><em>嘤嘤嘤</em></strong></td></tr><tr><td>删除线</td><td align="center">~~文本~~</td><td align="center"><del>嘤嘤嘤</del></td></tr><tr><td>链接</td><td align="center">[百度一下](<a href="https://www.baidu.com\" target="_blank" rel="noopener">https://www.baidu.com\</a>)</td><td align="center"><a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下</a></td></tr><tr><td>图片</td><td align="center">![图片下方文字](图片地址 &quot;鼠标悬停时显示的文字&quot;)</td><td align="center">ps: 悬停文字可不要</td></tr><tr><td>无序列表</td><td align="center">* 文本</td><td align="center">ps:- 文本 或 + 文本 也行</td></tr><tr><td>有序列表</td><td align="center">1. 文本</td><td align="center"></td></tr><tr><td>引用</td><td align="center">&gt; 文本</td><td align="center">可以嵌套，如&gt;&gt;、&gt;&gt;&gt;……</td></tr><tr><td>分割线</td><td align="center">- - - 或 ***(3个或以上)</td><td align="center"></td></tr><tr><td>代码</td><td align="center">`单行`          ```多行```</td><td align="center"></td></tr></tbody></table><blockquote><blockquote><p>百度百科（引用示例：&gt;&gt;）</p></blockquote></blockquote><pre class="line-numbers language-示例"><code class="language-示例">示例：多行代码展示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><code>单行代码展示</code></p><pre class="line-numbers language-表格"><code class="language-表格">|表头|表头|表头||---|:--:|---:||内容|内容|内容||内容|内容|内容|第二行分割表头和内容。- 有一个就行，为了对齐，多加了几个 文字默认居左-两边加：表示文字居中-右边加：表示文字居右 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h4 id="2-2-转义字符："><a href="#2-2-转义字符：" class="headerlink" title="2.2 转义字符："></a>2.2 转义字符：</h4><ol><li><p>特殊字符需要用转义字符 \ 输出。 </p></li><li><p>HTML中的转义字符：</p></li></ol><table><thead><tr><th>显示结果</th><th>描述</th><th>输入</th><th>实体编号</th></tr></thead><tbody><tr><td>&nbsp;</td><td>空格</td><td>&amp;nbsp;</td><td>&amp;#160;</td></tr><tr><td>&lt;</td><td>小于</td><td>&amp;lt;</td><td>&amp;#60;</td></tr><tr><td>&gt;</td><td>大于</td><td>&amp;gt;</td><td>&amp;#62;</td></tr><tr><td>&amp;</td><td>和</td><td>&amp;amp;</td><td>&amp;#38;</td></tr><tr><td>&quot;</td><td>双引</td><td>&amp;quot;</td><td>&amp;#34;</td></tr><tr><td>&#39;</td><td>单引</td><td>&amp;apos;</td><td>&amp;#39;</td></tr><tr><td>&divide;</td><td>除号</td><td>&amp;divide;</td><td>&amp;#247;</td></tr><tr><td>&copy;</td><td>版权</td><td>&amp;copy;</td><td>&amp;#169;</td></tr><tr><td>&reg;</td><td>注册商标</td><td>&amp;reg;</td><td>&amp;#174;</td></tr></tbody></table><hr><h4 id="2-3-标题"><a href="#2-3-标题" class="headerlink" title="2.3 标题"></a>2.3 标题</h4><p>对应个数的 “#” 来表示标题级别。</p><p># 一级标题（对应&lt;h1 /&gt;）</p><p>## 二级标题（对应&lt;h2 /&gt;）</p><p>### 三级标题（对应&lt;h3 /&gt;）</p><p>#### 四级标题（对应&lt;h4 /&gt;）</p><p>##### 五级标题（对应&lt;h5 /&gt;）</p><p>###### 六级标题（对应&lt;h6 /&gt;）</p><hr>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>第一篇博客</title>
+      <link href="/2020/06/16/di-yi-pian-bo-ke/"/>
+      <url>/2020/06/16/di-yi-pian-bo-ke/</url>
+      
+        <content type="html"><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>MySQL</p><hr><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>JDBC</p><hr><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2020/06/16/hello-world/"/>
+      <url>/2020/06/16/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
