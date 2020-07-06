@@ -266,8 +266,19 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #042A63 0%, #000000 100%);
+	opacity: 0.9;  /*透明效果 值范围 0~1*/
 }
+
+/* ====================================================================================== 
+.scroll-down {
+	-moz-animation: ;
+   $(".bg-color").opacity: 0;//导航条显示
+}
+
+ ====================================================================================== */
+
+
 
 .text-color {
     color: #0f9d58 !important;
@@ -276,13 +287,13 @@ mark {
 .white-color {
     color: #fff;
 }
-
+/* 底部进度条 */
 .progress-bar {
     height: 4px;
     position: fixed;
     bottom: 0;
     z-index: 300;
-    background: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background: linear-gradient(to right, #666666 0%, #000000 100%);
     opacity: 0.8;
 }
 
@@ -620,7 +631,7 @@ header .go-back i {
 }
 
 @-webkit-keyframes rainbow {
-
+/* 背景颜色渐变轮播
     0%,
     100% {
         background: rgba(156, 39, 176, 0.75);
@@ -663,10 +674,11 @@ header .go-back i {
         background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
+	*/
 }
 
 @keyframes rainbow {
-
+/* 背景颜色渐变轮播
     0%,
     100% {
         background: rgba(156, 39, 176, 0.75);
@@ -709,6 +721,7 @@ header .go-back i {
         background: -moz-linear-gradient(135deg, rgba(233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
         background: -webkit-linear-gradient(135deg, rgba(2233, 30, 99, 0.75) 0%, rgba(233, 30, 99, 0.65) 100%);
     }
+	*/
 }
 
 .index-card {
@@ -2152,4 +2165,22 @@ footer .copy-right {
     height: 50px;
     padding: 0px;
     margin: 0px;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #FFFFFF;
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: #666666;
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
+}
+/* 取消水平滚动条 */
+body{
+    overflow-x:hidden;
 }
