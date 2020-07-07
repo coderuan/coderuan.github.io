@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="格式化输出, wenah阮">
+    <meta name="keywords" content="Java语言概述, wenah阮">
     <meta name="description" content="我爱学习,学习爱我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>格式化输出 | wenah阮</title>
+    <title>Java语言概述 | wenah阮</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">格式化输出</h1>
+                    <h1 class="description center-align post-title">Java语言概述</h1>
                 </div>
             </div>
         </div>
@@ -367,7 +367,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    106
+                    345
                 </div>
                 
 
@@ -379,52 +379,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><h4 id="System-out-printf-方法的使用"><a href="#System-out-printf-方法的使用" class="headerlink" title="System.out.printf(); 方法的使用"></a>System.out.printf(); 方法的使用</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-<th>限定位宽</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>以字符串的形式输出</td>
-<td>%8s</td>
-<td>最多8个字符</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>以浮点类型的形式输出</td>
-<td>%[位宽] (.) [保留小数个数]f</td>
-<td></td>
-</tr>
-<tr>
-<td>%c</td>
-<td>以字符类型的形式输出</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>%d</td>
-<td>以十进制整数形式输出</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>%o</td>
-<td>以八进制整数形式输出</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>%x</td>
-<td>以十六进制整数形式输出</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
+                <h2 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h2><h4 id="一、Java不同开发版本"><a href="#一、Java不同开发版本" class="headerlink" title="一、Java不同开发版本"></a>一、Java不同开发版本</h4><ul>
+<li>JavaSE：Java Standard Edition —— 基础的控制台程序，桌面应用。</li>
+<li>JavaME：Java Micro Edition (缩小版) —— 电子词典程序，pda软件，机顶盒软件……</li>
+<li>JavaEE：Java Enterprise Edition (企业版) —— Web网站(如：淘宝、京东)。</li>
+</ul>
+<h4 id="二、Java特点与特性"><a href="#二、Java特点与特性" class="headerlink" title="二、Java特点与特性"></a>二、Java特点与特性</h4><h4 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1 特点"></a>2.1 特点</h4><ul>
+<li>简单易用：<ul>
+<li>深层封装语言, 屏蔽很多底层细节, 提供很多工具库。<br>没有指针 (不直接操作内存数据, 不能操作寄存器)。<br>有垃圾回收机制, 帮我们处理内存垃圾数据。</li>
+</ul>
+</li>
+<li>面向对象</li>
+<li>可移植性</li>
+</ul>
+<h4 id="2-2-三大特性"><a href="#2-2-三大特性" class="headerlink" title="2.2 三大特性"></a>2.2 三大特性</h4><ul>
+<li><p>封装 —— 将若干的数据(变量, 方法, 类) 封装为一个整体。</p>
+</li>
+<li><p>继承 —— 从某个资源中继承它的资源 (资源复用, 资源扩展)。</p>
+</li>
+<li><p>多态 —— 某个事物的多种形态、某种行为不同的表达方式。</p>
+</li>
+</ul>
+<h4 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h4><blockquote>
+<p>//单行注释</p>
+</blockquote>
+<blockquote>
+<p>/*<br>    多行注释<br>    多行注释<br>    多行注释<br>    多行注释<br>*/</p>
+</blockquote>
+<pre><code>文档注释：
+    /**
+     *    @param  参数名
+     *    @return  指明返回值的含义
+     *    @exception  完整类名
+     *    @deprecated  不建议使用、将来可能摈弃的说明
+     */
+生成文档注释：
+javadoc
+        -d            apidoc
+        -windowtitle  标题
+        -doctitle     文档标题
+        xx.java       Java 源文件 </code></pre><h4 id="四、JVM、JRE、JDK"><a href="#四、JVM、JRE、JDK" class="headerlink" title="四、JVM、JRE、JDK"></a>四、JVM、JRE、JDK</h4><ol>
+<li><p>什么是JVM？</p>
+<p>Java Virtual Machine，Java虚拟机。</p>
+</li>
+<li><p>什么是JRE？</p>
+<p>Java运行时环境：JavaSE（基础类库）+ JVM</p>
+</li>
+<li><p>什么是JDK？</p>
+<p>Java开发工具包：JRE + 开发工具</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -450,7 +454,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/06/30/ge-shi-hua-shu-chu/">https://coderuan.github.io/2020/06/30/ge-shi-hua-shu-chu/</a>
+                    <a href="https://coderuan.github.io/2020/06/30/java-yu-yan-gai-shu/">https://coderuan.github.io/2020/06/30/java-yu-yan-gai-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -657,30 +661,47 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/01/javascript/">
+                <a href="/2020/06/30/ge-shi-hua-shu-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="JavaScript">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="格式化输出">
                         
-                        <span class="card-title">JavaScript</span>
+                        <span class="card-title">格式化输出</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. 为什么要学JavaScript？
-表单的注册 —— 表单的页面验证（减轻服务器的压力）
-页面动态效果 —— 树形菜单的使用
-页面内容的动态展示 —— 表单的动态验证、表格的动态数据
+                            格式化输出System.out.printf(); 方法的使用
 
-2. JavaScript的特点
-HTML页面添加
+
+占位符
+说明
+限定位宽
+输出
+
+
+
+%s
+以字符串的形式输出
+%8s
+最多8个字符
+
+
+%f
+以浮点类型的形式输出
+%[位宽] (.) [保留小数个数]f
+
+
+
+%c
+以字
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
                         </span>
                         <span class="publish-author">
                             
@@ -689,18 +710,6 @@ HTML页面添加
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/JS/">
-                        <span class="chip bg-color">JS</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -712,26 +721,25 @@ HTML页面添加
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/30/java-yu-yan-gai-shu/">
+                <a href="/2020/06/28/markdown-xue-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java语言概述">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Markdown学习">
                         
-                        <span class="card-title">Java语言概述</span>
+                        <span class="card-title">Markdown学习</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java语言概述一、Java不同开发版本
-JavaSE：Java Standard Edition —— 基础的控制台程序，桌面应用。
-JavaME：Java Micro Edition (缩小版) —— 电子词典程序，pda软件，机顶盒软
+                            Markdown学习1.什么是Markdown？​        Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
+​        Markdown具有一系列衍生版本，用
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
                             </span>
                         <span class="publish-author">
                             
