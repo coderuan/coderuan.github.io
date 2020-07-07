@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Java基础</title>
+      <link href="/2020/07/07/java-yu-yan-gai-shu/"/>
+      <url>/2020/07/07/java-yu-yan-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h2><h4 id="一、Java不同开发版本"><a href="#一、Java不同开发版本" class="headerlink" title="一、Java不同开发版本"></a>一、Java不同开发版本</h4><ul><li>JavaSE：Java Standard Edition —— 基础的控制台程序，桌面应用。</li><li>JavaME：Java Micro Edition (缩小版) —— 电子词典程序，pda软件，机顶盒软件……</li><li>JavaEE：Java Enterprise Edition (企业版) —— Web网站(如：淘宝、京东)。</li></ul><h4 id="二、Java特点与特性"><a href="#二、Java特点与特性" class="headerlink" title="二、Java特点与特性"></a>二、Java特点与特性</h4><h4 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1 特点"></a>2.1 特点</h4><ul><li>简单易用：<ul><li>深层封装语言, 屏蔽很多底层细节, 提供很多工具库。<br>没有指针 (不直接操作内存数据, 不能操作寄存器)。<br>有垃圾回收机制, 帮我们处理内存垃圾数据。</li></ul></li><li>面向对象</li><li>可移植性</li></ul><h4 id="2-2-三大特性"><a href="#2-2-三大特性" class="headerlink" title="2.2 三大特性"></a>2.2 三大特性</h4><ul><li><p>封装 —— 将若干的数据(变量, 方法, 类) 封装为一个整体。</p></li><li><p>继承 —— 从某个资源中继承它的资源 (资源复用, 资源扩展)。</p></li><li><p>多态 —— 某个事物的多种形态、某种行为不同的表达方式。</p></li></ul><h4 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h4><blockquote><p>//单行注释</p></blockquote><blockquote><p>/*<br>    多行注释<br>    多行注释<br>    多行注释<br>    多行注释<br>*/</p></blockquote><pre><code>文档注释：    /**     *    @param  参数名     *    @return  指明返回值的含义     *    @exception  完整类名     *    @deprecated  不建议使用、将来可能摈弃的说明     */生成文档注释：javadoc        -d            apidoc        -windowtitle  标题        -doctitle     文档标题        xx.java       Java 源文件 </code></pre><h4 id="四、JVM、JRE、JDK"><a href="#四、JVM、JRE、JDK" class="headerlink" title="四、JVM、JRE、JDK"></a>四、JVM、JRE、JDK</h4><ol><li><p>什么是JVM？</p><p>Java Virtual Machine，Java虚拟机。</p></li><li><p>什么是JRE？</p><p>Java运行时环境：JavaSE（基础类库）+ JVM</p></li><li><p>什么是JDK？</p><p>Java开发工具包：JRE + 开发工具</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaSE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后台 </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JavaScript</title>
       <link href="/2020/07/01/javascript/"/>
       <url>/2020/07/01/javascript/</url>
@@ -30,19 +59,6 @@
       <url>/2020/06/30/ge-shi-hua-shu-chu/</url>
       
         <content type="html"><![CDATA[<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><h4 id="System-out-printf-方法的使用"><a href="#System-out-printf-方法的使用" class="headerlink" title="System.out.printf(); 方法的使用"></a>System.out.printf(); 方法的使用</h4><table><thead><tr><th>占位符</th><th>说明</th><th>限定位宽</th><th>输出</th></tr></thead><tbody><tr><td>%s</td><td>以字符串的形式输出</td><td>%8s</td><td>最多8个字符</td></tr><tr><td>%f</td><td>以浮点类型的形式输出</td><td>%[位宽] (.) [保留小数个数]f</td><td></td></tr><tr><td>%c</td><td>以字符类型的形式输出</td><td></td><td></td></tr><tr><td>%d</td><td>以十进制整数形式输出</td><td></td><td></td></tr><tr><td>%o</td><td>以八进制整数形式输出</td><td></td><td></td></tr><tr><td>%x</td><td>以十六进制整数形式输出</td><td></td><td></td></tr></tbody></table>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Java语言概述</title>
-      <link href="/2020/06/30/java-yu-yan-gai-shu/"/>
-      <url>/2020/06/30/java-yu-yan-gai-shu/</url>
-      
-        <content type="html"><![CDATA[<h2 id="Java语言概述"><a href="#Java语言概述" class="headerlink" title="Java语言概述"></a>Java语言概述</h2><h4 id="一、Java不同开发版本"><a href="#一、Java不同开发版本" class="headerlink" title="一、Java不同开发版本"></a>一、Java不同开发版本</h4><ul><li>JavaSE：Java Standard Edition —— 基础的控制台程序，桌面应用。</li><li>JavaME：Java Micro Edition (缩小版) —— 电子词典程序，pda软件，机顶盒软件……</li><li>JavaEE：Java Enterprise Edition (企业版) —— Web网站(如：淘宝、京东)。</li></ul><h4 id="二、Java特点与特性"><a href="#二、Java特点与特性" class="headerlink" title="二、Java特点与特性"></a>二、Java特点与特性</h4><h4 id="2-1-特点"><a href="#2-1-特点" class="headerlink" title="2.1 特点"></a>2.1 特点</h4><ul><li>简单易用：<ul><li>深层封装语言, 屏蔽很多底层细节, 提供很多工具库。<br>没有指针 (不直接操作内存数据, 不能操作寄存器)。<br>有垃圾回收机制, 帮我们处理内存垃圾数据。</li></ul></li><li>面向对象</li><li>可移植性</li></ul><h4 id="2-2-三大特性"><a href="#2-2-三大特性" class="headerlink" title="2.2 三大特性"></a>2.2 三大特性</h4><ul><li><p>封装 —— 将若干的数据(变量, 方法, 类) 封装为一个整体。</p></li><li><p>继承 —— 从某个资源中继承它的资源 (资源复用, 资源扩展)。</p></li><li><p>多态 —— 某个事物的多种形态、某种行为不同的表达方式。</p></li></ul><h4 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h4><blockquote><p>//单行注释</p></blockquote><blockquote><p>/*<br>    多行注释<br>    多行注释<br>    多行注释<br>    多行注释<br>*/</p></blockquote><pre><code>文档注释：    /**     *    @param  参数名     *    @return  指明返回值的含义     *    @exception  完整类名     *    @deprecated  不建议使用、将来可能摈弃的说明     */生成文档注释：javadoc        -d            apidoc        -windowtitle  标题        -doctitle     文档标题        xx.java       Java 源文件 </code></pre><h4 id="四、JVM、JRE、JDK"><a href="#四、JVM、JRE、JDK" class="headerlink" title="四、JVM、JRE、JDK"></a>四、JVM、JRE、JDK</h4><ol><li><p>什么是JVM？</p><p>Java Virtual Machine，Java虚拟机。</p></li><li><p>什么是JRE？</p><p>Java运行时环境：JavaSE（基础类库）+ JVM</p></li><li><p>什么是JDK？</p><p>Java开发工具包：JRE + 开发工具</p></li></ol>]]></content>
       
       
       

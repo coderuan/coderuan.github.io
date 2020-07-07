@@ -130,19 +130,40 @@ $(function () {
     // 当页面处于文章中部的时候刷新页面，因为此时无滚动，所以需要判断位置,给导航加上绿色。
     showOrHideNavBg($(window).scrollTop());
     $(window).scroll(function () {
-        /* 回到顶部按钮根据滚动条的位置的显示和隐藏.*/
+        /* [回到顶部按钮] 根据滚动条的位置的显示和隐藏.*/
         let scroll = $(window).scrollTop();
         showOrHideNavBg(scroll);
     });
 
+	/*[DEBUG]鼠标滚轮上下滚动事件(导航栏透明度)*/
+	$(document).on('mousewheel DOMMouseScroll', onMouseScroll );
+	function onMouseScroll(e){
+		// e.preventDefault();
+		var wheel = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+		var delta = Math.max(-1, Math.min(1, wheel) );
+		if(delta<0){//向下滚动
+			//$nav.addClass('nav-transparent');/*添加导航栏透明*/
+			$nav.stop();/*暂停动画,防止多次触发*/
+			$nav.slideUp(500);/*导航栏0.5s后消失*/
+		}else{//向上滚动
+			if ($(window).scrollTop()>100) {/*还没有滑动到页面顶部时*/
+				//$nav.removeClass('nav-transparent');/*取消导航栏透明*/
+				$nav.stop();/*暂停动画,防止多次触发*/
+				$nav.slideDown(500);/*导航栏0.5s后出现*/
+			}
+		}    
+	}
+
     function showOrHideNavBg(position) {
         let showPosition = 100;
         if (position < showPosition) {
-            $nav.addClass('nav-transparent');
-            $backTop.slideUp(300);
+            $nav.addClass('nav-transparent');/*滑动到页面顶部时,添加导航栏透明*/
+            $backTop.slideUp(300);/*返回顶部按钮消失*/
+			$nav.stop();/*暂停动画,防止多次触发*/
+			$nav.slideDown(500);/*导航栏0.5s后出现*/
         } else {
-            $nav.removeClass('nav-transparent');
-            $backTop.slideDown(300);
+            $nav.removeClass('nav-transparent');/*浏览页面时,取消导航栏透明*/
+            $backTop.slideDown(300);/*返回顶部按钮出现*/
         }
     }
 
