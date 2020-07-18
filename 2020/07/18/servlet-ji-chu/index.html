@@ -392,7 +392,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    7.2k
                 </div>
                 
 
@@ -846,11 +846,198 @@ for(String str:names){
 <p>​        2.Servlet url名和变量之间有？连接</p>
 <p>​        3.如果要传递两个或以上参数，参数之间用&amp;连接</p>
 <hr>
+<h3 id="五、request-getRequestURL-和request-getRequestURI-的区别"><a href="#五、request-getRequestURL-和request-getRequestURI-的区别" class="headerlink" title="五、request.getRequestURL()和request.getRequestURI()的区别"></a>五、request.getRequestURL()和request.getRequestURI()的区别</h3><ul>
+<li><p>request.getRequestURL() 返回 <strong>全路径</strong></p>
+<ul>
+<li>如：<a href="http://localhost:8080/myServlet/page/index.jsp" target="_blank" rel="noopener">http://localhost:8080/myServlet/page/index.jsp</a></li>
+</ul>
+</li>
+<li><p>request.getRequestURI() 返回 <strong>除去host（域名或者ip）部分的路径</strong></p>
+<ul>
+<li>如：/myServlet/page/index.jsp</li>
+</ul>
+</li>
+<li><p>request.getContextPath() 返回 <strong>工程名部分</strong>，如果工程映射为/，此处返回则为空</p>
+<ul>
+<li>如：/myServlet</li>
+</ul>
+</li>
+<li><p>request.getServletPath() 返回 <strong>除去host和工程名部分的路径</strong></p>
+<ul>
+<li>如：/page/index.jsp</li>
+</ul>
+</li>
+</ul>
+<p><strong>注：myServlet为工程名、page为WebContext下的目录名</strong></p>
+<hr>
+<h3 id="六、getInitParameter方法-从web-xml中获取参数"><a href="#六、getInitParameter方法-从web-xml中获取参数" class="headerlink" title="六、getInitParameter方法(从web.xml中获取参数)"></a>六、getInitParameter方法(从web.xml中获取参数)</h3><p>在 <strong>ServletConfig</strong> 和 <strong>ServletContext</strong> 都有 getInitParameter 方法， </p>
+<p>这两个方法的都能从web.xml中获取参数，但是是有区别的。</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;  
+&lt;web-app id=&quot;WebApp_ID&quot; version=&quot;2.5&quot; xmlns=&quot;http://java.sun.com/xml/ns/javaee&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&quot;&gt;  
+
+    &lt;context-param&gt;  
+      &lt;param-name&gt;webParam&lt;/param-name&gt;  
+      &lt;param-value&gt;bigbigbig&lt;/param-value&gt;  
+    &lt;/context-param&gt;  
+
+    &lt;servlet&gt;  
+        &lt;servlet-name&gt;test&lt;/servlet-name&gt;  
+        &lt;servlet-class&gt;com.wenah.Test&lt;/servlet-class&gt;  
+        &lt;init-param&gt;  
+          &lt;param-name&gt;servletParam&lt;/param-name&gt;  
+          &lt;param-value&gt;smallsmallsmall&lt;/param-value&gt;  
+        &lt;/init-param&gt;  
+    &lt;/servlet&gt;  
+
+    &lt;servlet-mapping&gt;  
+        &lt;servlet-name&gt;test&lt;/servlet-name&gt;  
+        &lt;url-pattern&gt;/testParam&lt;/url-pattern&gt;  
+    &lt;/servlet-mapping&gt;  
+
+&lt;/web-app&gt;  </code></pre><p>测试类：</p>
+<pre><code>@WebServlet(&quot;/testParam&quot;)
+public class Test extends HttpServlet {
+    public void doGet(HttpServletRequest request, HttpServletResponse response)  
+            throws ServletException, IOException {
+
+        //独属于Test这个Servlet的参数:
+        String sParam = this.getInitParameter(&quot;servletParam&quot;);
+        //web范围的参数:
+        String wParam = this.getServletContext().getInitParameter(&quot;webParam&quot;);  
+
+        String ret = &quot;{Test}sParam:&quot;+sParam+&quot;&lt;br/&gt;{Test}wParam:&quot;+wParam;
+        resp.getWriter().write(ret);
+    }  
+}  </code></pre><p>输出结果：</p>
+<p>{Test}sParam:smallsmallsmall</p>
+<p>{Test}wParam:bigbigbig</p>
+<hr>
+<h3 id="七、Filter过滤器"><a href="#七、Filter过滤器" class="headerlink" title="七、Filter过滤器"></a>七、Filter过滤器</h3><ul>
+<li>Filter过滤器是servlet和jsp的核心技术</li>
+<li>可以统一的去控制资源，统一处理问题，对于<strong>权限的控制</strong>，可以大大的提高开发的效率，高复用部分代码。</li>
+</ul>
+<h4 id="5-1、实现的接口为servlet-filter接口"><a href="#5-1、实现的接口为servlet-filter接口" class="headerlink" title="5.1、实现的接口为servlet.filter接口"></a>5.1、实现的接口为servlet.filter接口</h4><ol>
+<li>当客户端发送请求后，servlet容器会调用filter过滤器</li>
+<li>如果请求在filter中<strong>通过</strong>，则会将请求转发给servlet</li>
+<li>如果请求在filer中<strong>不通过</strong>，则进行指定跳转</li>
+</ol>
+<p><strong>Filter中需要实现的方法：</strong></p>
+<ul>
+<li>Init方法</li>
+<li>doFilter方法</li>
+<li>destroy 方法</li>
+</ul>
+<hr>
+<h4 id="5-2、创建字符编码过滤器（解决中文乱码问题）"><a href="#5-2、创建字符编码过滤器（解决中文乱码问题）" class="headerlink" title="5.2、创建字符编码过滤器（解决中文乱码问题）"></a>5.2、创建字符编码过滤器（解决中文乱码问题）</h4><p>需要实现filter接口：</p>
+<pre><code>public class EncodingFilter implements Filter {
+    //定义一个变量，用于接收配置文件中的初始属性
+    String encoding = &quot;&quot;;
+    @Override
+    public void destroy() {
+        // TODO Auto-generated method stub
+    }
+    @Override
+    public void doFilter(ServletRequest arg0, ServletResponse arg1,
+            FilterChain filterChain) throws IOException, ServletException {
+        //因为filter中使用的请求与响应都不携带Http协议，需要先将请求与响应强转为http协议的请求与响应
+        HttpServletRequest request = (HttpServletRequest) arg0;
+        HttpServletResponse response = (HttpServletResponse) arg1;
+        //当filter中统一设置编码格式后，其他的类都不需要设置编码格式
+        request.setCharacterEncoding(encoding);
+        response.setCharacterEncoding(encoding);
+        response.setContentType(&quot;text/html;charset=utf-8&quot;);
+        //让过滤器将执行后的请求与响应再次回到请求链中
+        filterChain.doFilter(request, response);
+    }
+
+    @Override
+    public void init(FilterConfig config) throws ServletException {
+        //getInitParameter()从web.xml中获取对应的参数
+        encoding = config.getInitParameter(&quot;encoding&quot;);
+    }
+}</code></pre><p><strong>配置web.xml文件</strong>，使指定请求进入到filter过滤器中</p>
+<pre><code>&lt;!-- 设置一对filter映射关系 --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;encod&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.entor.filter.EncodingFilter&lt;/filter-class&gt;
+    &lt;!-- 为过滤器设置一个初始属性，在过滤器中的init方法获取 --&gt;
+    &lt;init-param&gt;
+        &lt;param-name&gt;encoding&lt;/param-name&gt;
+        &lt;param-value&gt;utf-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+&lt;/filter&gt;
+
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;encod&lt;/filter-name&gt;
+    &lt;!-- /*表示所有的请求都会进入过滤器 --&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</code></pre><hr>
+<h4 id="5-3、登录权限控制"><a href="#5-3、登录权限控制" class="headerlink" title="5.3、登录权限控制"></a>5.3、登录权限控制</h4><pre><code>public class UsersFilter implements Filter {
+    //定义可放行的请求
+    String[] urls = {&quot;/login&quot;,&quot;/loginServlet&quot;};
+
+    @Override
+    public void destroy() {}
+
+    @Override
+    public void doFilter(ServletRequest arg0, ServletResponse arg1,
+            FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest request = (HttpServletRequest) arg0;
+        HttpServletResponse response = (HttpServletResponse) arg1;
+        boolean flag = false;
+        //获取到请求的相对路径
+        String path = request.getRequestURI();
+        for(String url:urls){    //遍历验证可放行的请求
+            if(path.indexOf(url)!=-1){
+                flag = true;
+                break;
+            }
+        }
+
+        if(flag){
+            chain.doFilter(request, response); //可放行的请求,执行放行操作
+        }else{
+            //判断session是否为空，session都为空一定是非登录状态
+            //getSession(false)：false表示获取对象而非创建session对象
+            if(request.getSession(false)!=null){
+                //从session中获取到user对象
+                Users user = (Users) request.getSession(false).getAttribute(&quot;user&quot;);
+                if(user!=null){
+                    //如果都验证成功，回到请求链
+                    chain.doFilter(request, response);    //已登陆用户,执行放行操作
+                }
+            }
+            //如果不成功则重定向到login界面(也可自定义失败页面)
+            response.sendRedirect(&quot;login&quot;);
+        }
+
+    }
+
+    @Override
+    public void init(FilterConfig arg0) throws ServletException {
+        // TODO Auto-generated method stub
+    }
+
+}</code></pre><p>配置权限控制过滤器的web.xml</p>
+<pre><code>&lt;!-- 设置一对filter映射关系 --&gt;
+&lt;filter&gt;
+    &lt;filter-name&gt;userFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;com.entor.filter.UsersFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+
+&lt;filter-mapping&gt;
+    &lt;filter-name&gt;userFilter&lt;/filter-name&gt;
+    &lt;!-- /*表示所有的请求都会进入过滤器 --&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;</code></pre><hr>
+<h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>越写越多了，w(ﾟДﾟ)w</p>
+<hr>
 <blockquote>
 <p><a href="https://baike.baidu.com/item/servlet" target="_blank" rel="noopener">百度百科|Servlet</a></p>
 <p><a href="https://blog.csdn.net/qq_30920821/java/article/details/78328608" target="_blank" rel="noopener">Web容器中DefaultServlet详解</a></p>
 <p><a href="https://blog.csdn.net/javadxz/article/details/6400448" target="_blank" rel="noopener">servlet doPost() doHead() doGet()等方法被执行的由来</a></p>
 <p><a href="https://www.cnblogs.com/dflmg/p/6393416.html" target="_blank" rel="noopener">【Spring框架】<a href="mvc:default-servlet-handler/">mvc:default-servlet-handler/</a>的作用</a></p>
+<p><a href="https://blog.csdn.net/gavid0124/java/article/details/45390999" target="_blank" rel="noopener">request.getRequestURL()和request.getRequestURI()的区别</a></p>
 </blockquote>
 
             </div>
@@ -1359,29 +1546,28 @@ for(String str:names){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/07/18/servlet-ji-chu/">
+                <a href="/2020/07/18/chuang-jian-yi-ge-servlet-cheng-xu/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/blackCatAndGirl.jpg" class="responsive-img" alt="Servlet基础">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/ACG/wallhaven.jpg" class="responsive-img" alt="创建一个Servlet程序">
                         
-                        <span class="card-title">Servlet基础</span>
+                        <span class="card-title">创建一个Servlet程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Servlet基础记录(发动基础精通buff)
+                            使用Eclipse创建一个Servlet程序全记录
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1394,7 +1580,6 @@ for(String str:names){
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -1404,10 +1589,6 @@ for(String str:names){
                     
                     <a href="/tags/%E5%90%8E%E5%8F%B0/">
                         <span class="chip bg-color">后台</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
                     </a>
                     
                     <a href="/tags/Servlet/">
@@ -1624,7 +1805,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13k</span>&nbsp;字
+                class="white-color">15.5k</span>&nbsp;字
             
             
             
