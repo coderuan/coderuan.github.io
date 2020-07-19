@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="第一篇博客, wenah阮">
+    <meta name="keywords" content="Session和Cookie, wenah阮">
     <meta name="description" content="我爱学习,学习爱我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>第一篇博客 | wenah阮</title>
+    <title>Session和Cookie | wenah阮</title>
     <link rel="icon" type="image/jpeg" href="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/down/down007.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">第一篇博客</h1>
+                    <h1 class="description center-align post-title">Session和Cookie</h1>
                 </div>
             </div>
         </div>
@@ -344,12 +344,33 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                <span class="chip bg-color">后台</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaEE/" class="post-category">
+                                JavaEE
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -358,7 +379,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-06-16
+                    2020-07-19
                 </div>
                 
 
@@ -367,7 +388,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    12
+                    1.4k
                 </div>
                 
 
@@ -379,11 +400,120 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>MySQL</p>
+                <h2 id="一、Session"><a href="#一、Session" class="headerlink" title="一、Session"></a>一、Session</h2><h3 id="1-1、什么是HttpSession？"><a href="#1-1、什么是HttpSession？" class="headerlink" title="1.1、什么是HttpSession？"></a>1.1、什么是HttpSession？</h3><ul>
+<li>http协议的一次会话，提供了存储和返回标准会话属性的方法。</li>
+<li>标准会话属性如会话标识符、应用数据等，都以“名字——值”对的形式保存在服务器。</li>
+<li>也就是说，HttpSession接口提供了一种<strong>把对象存到内存</strong>、在统一用户的<strong>后继请求中</strong>提取这些对象的标准方法。</li>
+</ul>
+<p>当用户打开浏览器，访问某个网站时，服务器就会在服务器的内存中为该浏览器分配一个空间，该空间被这个浏览器独占，这个空间就是Session。Session的数据默认存在时间为30分钟（Tomcat），也可以自行修改。</p>
+<h3 id="1-2、Session可以用来做什么？"><a href="#1-2、Session可以用来做什么？" class="headerlink" title="1.2、Session可以用来做什么？"></a>1.2、Session可以用来做什么？</h3><p>1、 网上商城中的购物车</p>
+<p>2、 保存登录的用户信息</p>
+<p>3、 将某些数据放到session中，供同一用户的各个页面使用</p>
+<p>4、 防止用户的非法登录到某个页面</p>
+<p>5、 ……….很多很多😄</p>
+<h4 id="如何使用session"><a href="#如何使用session" class="headerlink" title="如何使用session"></a>如何使用session</h4><ul>
+<li>获得session</li>
+</ul>
+<p><code>HttpSession session = request.getSession();</code></p>
+<pre><code>//参数为true时,若存在会话,则返回该会话,否则 new 一个会话;
+//参数为false时,如存在会话,则返回该会话,否则返回NULL;
+getSession(boolean flag)
+
+getSession()相当于getSession(true);</code></pre><ul>
+<li>添加值到session</li>
+</ul>
+<p><code>session.setAttribute(String name,Objct val);</code></p>
+<ul>
+<li>从session中获得属性值</li>
+</ul>
+<p><code>String name = session.getAttribute(String name);</code></p>
+<ul>
+<li>从session中删除某个属性</li>
+</ul>
+<p><code>session.removeAttribute(String name);</code></p>
+<ul>
+<li>设置Session的存活期限： </li>
+</ul>
+<p><code>setMaxInactiveInterval(int interval);</code>  </p>
+<p>设置请求间隔时间（单位是秒），当浏览器超出interval秒还没有请求该应用的话就清除该Session。（如果在设定时间内访问，则会从最后一次访问时间点重新开始计算存活时间）</p>
+<p>注意：如果interval为0或负则表示Session可以无限存活（除非关闭Web容器）</p>
 <hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>JDBC</p>
+<h2 id="二、Cookie"><a href="#二、Cookie" class="headerlink" title="二、Cookie"></a>二、Cookie</h2><h3 id="2-1、Cookie的起源"><a href="#2-1、Cookie的起源" class="headerlink" title="2.1、Cookie的起源"></a>2.1、Cookie的起源</h3><p>Cookie最早出现在网景公司的雇员Lou Montulli在1993年的时候发明。</p>
+<p>​        Cookie是由服务器端生成，一般发送给浏览器，<strong>浏览器会将cookie的key/value保存到某个目录下</strong>的文本中。Cookie名称和值可以由服务器端自定义，对于JSP而言也可以直接写入jsessionid，这样服务器可以知道该用户是否合法用户以及是否需要重新登录。</p>
+<h4 id="Cookie使用"><a href="#Cookie使用" class="headerlink" title="Cookie使用"></a>Cookie使用</h4><p>1、 创建cookie（服务端创建）</p>
+<p><code>Cookie cook = new Cookie(String key,String value);</code></p>
+<p>2、 将创建好的cookie添加到客户端</p>
+<p><code>response.addCookie(cook);</code></p>
+<p>3、 如何读取cookie(从客户端读取到服务端中)</p>
+<p><code>request.getCookies();</code></p>
+<pre><code>//获取cookie，cookie可能是多个，所以返回一组cookie
+Cookie[] cook = request.getCookies();
+
+if(cook!=null){
+    for(int i=0;i&lt;cook.length;i++){
+        //获得cookie中的元素
+        Cookie co = cook[i];
+        //通过判断是否有需要的cookie，co.getName()获得cookie的名字
+        if(co.getName().equals(&quot;name&quot;)){
+            name = co.getValue();    //读取用户名
+            co.setMaxAge(0);    //时效为0，cookie失效
+        }
+        if(co.getName().equals(&quot;pwd&quot;)){
+            pwd = co.getValue();    //读取密码
+            co.setMaxAge(0);    //时效为0，cookie失效
+        }
+    }
+}</code></pre><p>4、 设置cookie存在时间</p>
+<p>Cooker.setMaxAge(秒)</p>
+<p>5、 删除cookie，将cookie的SetMaxAge时间设置为0</p>
+<h4 id="Cookie的生命周期"><a href="#Cookie的生命周期" class="headerlink" title="Cookie的生命周期"></a>Cookie的生命周期</h4><ul>
+<li>Cookie可以保持登录信息到用户下次与服务器的会话<ul>
+<li>换句话说，下次访问同一网站时，用户不必输入用户名和密码就可以登陆了。</li>
+</ul>
+</li>
+<li>Cookie在生成时就会<strong>被指定一个expire值</strong>，这就是cookie的生命周期，超出周期cookie就会被清除。<ul>
+<li>有些页面将cookie的生存周期设置为0，这样在关闭页面是，就马上清除cookie，不会记录用户信息，更加安全。</li>
+</ul>
+</li>
+</ul>
+<h4 id="Cookie的优缺点"><a href="#Cookie的优缺点" class="headerlink" title="Cookie的优缺点"></a>Cookie的优缺点</h4><ul>
+<li>优点</li>
+</ul>
+<p><strong>方便用户登陆网站</strong>——保存有用户信息，可用于自动登陆等</p>
+<p><strong>独立的Cookie空间</strong>——在一台计算机中安装多个浏览器，每个浏览器都会在各自独立的空间存放cookie。cookie中不但可以确认用户，还能包含计算机信息和浏览器信息，所以一个用户用不同的浏览器登录或使用不同的计算机登录，都会得到不同的cookie信息。</p>
+<ul>
+<li>缺点</li>
+</ul>
+<p><strong>识别不精确</strong>——对于在同一台计算机上使用同一浏览器的多用户群，cookie不会区分他们的身份，除非他们使用不同的用户名登录</p>
+<p><strong>个人隐私和安全</strong>——因为会保存计算机信息和用户信息，这些都为敏感信息，有可能会被泄露</p>
 <hr>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>
+<h2 id="三、Session和Cookie的区别"><a href="#三、Session和Cookie的区别" class="headerlink" title="三、Session和Cookie的区别"></a>三、Session和Cookie的区别</h2><h3 id="3-1、存在的位置"><a href="#3-1、存在的位置" class="headerlink" title="3.1、存在的位置"></a>3.1、存在的位置</h3><ul>
+<li>Session对象保存在<strong>服务器</strong>内存中</li>
+<li>Cookie对象保存在<strong>客户端</strong>的硬盘或内存中</li>
+</ul>
+<h3 id="3-2、安全性"><a href="#3-2、安全性" class="headerlink" title="3.2、安全性"></a>3.2、安全性</h3><ul>
+<li>Session的安全性较高，因为它存放于服务端</li>
+<li>Cookie安全性相对较低，因为它保存在客户端，任何人都可以获得你的账号和密码</li>
+</ul>
+<h3 id="3-3、网络传输"><a href="#3-3、网络传输" class="headerlink" title="3.3、网络传输"></a>3.3、网络传输</h3><ul>
+<li>Session因为保存在服务端，不需要传输</li>
+<li>cookie保存在客户端，需要进行网络传输</li>
+</ul>
+<h3 id="3-4、生命周期"><a href="#3-4、生命周期" class="headerlink" title="3.4、生命周期"></a>3.4、生命周期</h3><ul>
+<li><p>Session的生命周期是一个<strong>间隔</strong>，从创建的时候开始计时</p>
+<ul>
+<li>如果在生命周期内没有访问Session，那么Session无效</li>
+<li>如果在生命周期内访问Session，那么它的生命周期<strong>重新计算</strong></li>
+</ul>
+</li>
+<li><p>Cookie的生命周期是<strong>累计</strong>的，从创建的时候开始计时</p>
+<ul>
+<li>生命周期到了之后Cookie的生命周期结束，cookie就无效了</li>
+<li>就算周期内再访问，也<strong>不会重新计时</strong>，不会刷新</li>
+</ul>
+</li>
+</ul>
+
             </div>
             <hr/>
 
@@ -398,7 +528,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">wenah阮</a>
+                    <a href="/about" rel="external nofollow noreferrer">阮阮阮</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -408,7 +538,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/06/16/di-yi-pian-bo-ke/">https://coderuan.github.io/2020/06/16/di-yi-pian-bo-ke/</a>
+                    <a href="https://coderuan.github.io/2020/07/19/session-he-cookie/">https://coderuan.github.io/2020/07/19/session-he-cookie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -421,7 +551,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">wenah阮</a>
+                    <a href="/about" target="_blank">阮阮阮</a>
                     !
                 </span>
             </div>
@@ -445,7 +575,19 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                    <span class="chip bg-color">后台</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -874,37 +1016,57 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/06/28/markdown-xue-xi/">
+                <a href="/2020/07/19/session-he-cookie/">
                     <div class="card-image">
                         
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/down/down007.jpg" class="responsive-img" alt="Session和Cookie">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/3.jpg" class="responsive-img" alt="Markdown学习">
-                        
-                        <span class="card-title">Markdown学习</span>
+                        <span class="card-title">Session和Cookie</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Markdown学习1.什么是Markdown？​        Markdown是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式。
-​        Markdown具有一系列衍生版本，用
+                            Session和Cookie简述
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            wenah阮
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -913,41 +1075,59 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/16/di-yi-pian-bo-ke/">
+                <a href="/2020/07/18/servlet-zhong-shi-yong-fen-ye/">
                     <div class="card-image">
                         
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/ACG/wallhaven.jpg" class="responsive-img" alt="Servlet使用分页技术">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/1.jpg" class="responsive-img" alt="第一篇博客">
-                        
-                        <span class="card-title">第一篇博客</span>
+                        <span class="card-title">Servlet使用分页技术</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            第一章MySQL
-
-第二章JDBC
-
-参考文献
+                            Servlet中使用分页技术
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            wenah阮
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
+                    </a>
+                    
+                    <a href="/tags/Servlet/">
+                        <span class="chip bg-color">Servlet</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%88%86%E9%A1%B5/">
+                        <span class="chip bg-color">分页</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -1097,7 +1277,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.5k</span>&nbsp;字
+                class="white-color">16.9k</span>&nbsp;字
             
             
             

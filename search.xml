@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Session和Cookie</title>
+      <link href="/2020/07/19/session-he-cookie/"/>
+      <url>/2020/07/19/session-he-cookie/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、Session"><a href="#一、Session" class="headerlink" title="一、Session"></a>一、Session</h2><h3 id="1-1、什么是HttpSession？"><a href="#1-1、什么是HttpSession？" class="headerlink" title="1.1、什么是HttpSession？"></a>1.1、什么是HttpSession？</h3><ul><li>http协议的一次会话，提供了存储和返回标准会话属性的方法。</li><li>标准会话属性如会话标识符、应用数据等，都以“名字——值”对的形式保存在服务器。</li><li>也就是说，HttpSession接口提供了一种<strong>把对象存到内存</strong>、在统一用户的<strong>后继请求中</strong>提取这些对象的标准方法。</li></ul><p>当用户打开浏览器，访问某个网站时，服务器就会在服务器的内存中为该浏览器分配一个空间，该空间被这个浏览器独占，这个空间就是Session。Session的数据默认存在时间为30分钟（Tomcat），也可以自行修改。</p><h3 id="1-2、Session可以用来做什么？"><a href="#1-2、Session可以用来做什么？" class="headerlink" title="1.2、Session可以用来做什么？"></a>1.2、Session可以用来做什么？</h3><p>1、 网上商城中的购物车</p><p>2、 保存登录的用户信息</p><p>3、 将某些数据放到session中，供同一用户的各个页面使用</p><p>4、 防止用户的非法登录到某个页面</p><p>5、 ……….很多很多😄</p><h4 id="如何使用session"><a href="#如何使用session" class="headerlink" title="如何使用session"></a>如何使用session</h4><ul><li>获得session</li></ul><p><code>HttpSession session = request.getSession();</code></p><pre><code>//参数为true时,若存在会话,则返回该会话,否则 new 一个会话;//参数为false时,如存在会话,则返回该会话,否则返回NULL;getSession(boolean flag)getSession()相当于getSession(true);</code></pre><ul><li>添加值到session</li></ul><p><code>session.setAttribute(String name,Objct val);</code></p><ul><li>从session中获得属性值</li></ul><p><code>String name = session.getAttribute(String name);</code></p><ul><li>从session中删除某个属性</li></ul><p><code>session.removeAttribute(String name);</code></p><ul><li>设置Session的存活期限： </li></ul><p><code>setMaxInactiveInterval(int interval);</code>  </p><p>设置请求间隔时间（单位是秒），当浏览器超出interval秒还没有请求该应用的话就清除该Session。（如果在设定时间内访问，则会从最后一次访问时间点重新开始计算存活时间）</p><p>注意：如果interval为0或负则表示Session可以无限存活（除非关闭Web容器）</p><hr><h2 id="二、Cookie"><a href="#二、Cookie" class="headerlink" title="二、Cookie"></a>二、Cookie</h2><h3 id="2-1、Cookie的起源"><a href="#2-1、Cookie的起源" class="headerlink" title="2.1、Cookie的起源"></a>2.1、Cookie的起源</h3><p>Cookie最早出现在网景公司的雇员Lou Montulli在1993年的时候发明。</p><p>​        Cookie是由服务器端生成，一般发送给浏览器，<strong>浏览器会将cookie的key/value保存到某个目录下</strong>的文本中。Cookie名称和值可以由服务器端自定义，对于JSP而言也可以直接写入jsessionid，这样服务器可以知道该用户是否合法用户以及是否需要重新登录。</p><h4 id="Cookie使用"><a href="#Cookie使用" class="headerlink" title="Cookie使用"></a>Cookie使用</h4><p>1、 创建cookie（服务端创建）</p><p><code>Cookie cook = new Cookie(String key,String value);</code></p><p>2、 将创建好的cookie添加到客户端</p><p><code>response.addCookie(cook);</code></p><p>3、 如何读取cookie(从客户端读取到服务端中)</p><p><code>request.getCookies();</code></p><pre><code>//获取cookie，cookie可能是多个，所以返回一组cookieCookie[] cook = request.getCookies();if(cook!=null){    for(int i=0;i&lt;cook.length;i++){        //获得cookie中的元素        Cookie co = cook[i];        //通过判断是否有需要的cookie，co.getName()获得cookie的名字        if(co.getName().equals(&quot;name&quot;)){            name = co.getValue();    //读取用户名            co.setMaxAge(0);    //时效为0，cookie失效        }        if(co.getName().equals(&quot;pwd&quot;)){            pwd = co.getValue();    //读取密码            co.setMaxAge(0);    //时效为0，cookie失效        }    }}</code></pre><p>4、 设置cookie存在时间</p><p>Cooker.setMaxAge(秒)</p><p>5、 删除cookie，将cookie的SetMaxAge时间设置为0</p><h4 id="Cookie的生命周期"><a href="#Cookie的生命周期" class="headerlink" title="Cookie的生命周期"></a>Cookie的生命周期</h4><ul><li>Cookie可以保持登录信息到用户下次与服务器的会话<ul><li>换句话说，下次访问同一网站时，用户不必输入用户名和密码就可以登陆了。</li></ul></li><li>Cookie在生成时就会<strong>被指定一个expire值</strong>，这就是cookie的生命周期，超出周期cookie就会被清除。<ul><li>有些页面将cookie的生存周期设置为0，这样在关闭页面是，就马上清除cookie，不会记录用户信息，更加安全。</li></ul></li></ul><h4 id="Cookie的优缺点"><a href="#Cookie的优缺点" class="headerlink" title="Cookie的优缺点"></a>Cookie的优缺点</h4><ul><li>优点</li></ul><p><strong>方便用户登陆网站</strong>——保存有用户信息，可用于自动登陆等</p><p><strong>独立的Cookie空间</strong>——在一台计算机中安装多个浏览器，每个浏览器都会在各自独立的空间存放cookie。cookie中不但可以确认用户，还能包含计算机信息和浏览器信息，所以一个用户用不同的浏览器登录或使用不同的计算机登录，都会得到不同的cookie信息。</p><ul><li>缺点</li></ul><p><strong>识别不精确</strong>——对于在同一台计算机上使用同一浏览器的多用户群，cookie不会区分他们的身份，除非他们使用不同的用户名登录</p><p><strong>个人隐私和安全</strong>——因为会保存计算机信息和用户信息，这些都为敏感信息，有可能会被泄露</p><hr><h2 id="三、Session和Cookie的区别"><a href="#三、Session和Cookie的区别" class="headerlink" title="三、Session和Cookie的区别"></a>三、Session和Cookie的区别</h2><h3 id="3-1、存在的位置"><a href="#3-1、存在的位置" class="headerlink" title="3.1、存在的位置"></a>3.1、存在的位置</h3><ul><li>Session对象保存在<strong>服务器</strong>内存中</li><li>Cookie对象保存在<strong>客户端</strong>的硬盘或内存中</li></ul><h3 id="3-2、安全性"><a href="#3-2、安全性" class="headerlink" title="3.2、安全性"></a>3.2、安全性</h3><ul><li>Session的安全性较高，因为它存放于服务端</li><li>Cookie安全性相对较低，因为它保存在客户端，任何人都可以获得你的账号和密码</li></ul><h3 id="3-3、网络传输"><a href="#3-3、网络传输" class="headerlink" title="3.3、网络传输"></a>3.3、网络传输</h3><ul><li>Session因为保存在服务端，不需要传输</li><li>cookie保存在客户端，需要进行网络传输</li></ul><h3 id="3-4、生命周期"><a href="#3-4、生命周期" class="headerlink" title="3.4、生命周期"></a>3.4、生命周期</h3><ul><li><p>Session的生命周期是一个<strong>间隔</strong>，从创建的时候开始计时</p><ul><li>如果在生命周期内没有访问Session，那么Session无效</li><li>如果在生命周期内访问Session，那么它的生命周期<strong>重新计算</strong></li></ul></li><li><p>Cookie的生命周期是<strong>累计</strong>的，从创建的时候开始计时</p><ul><li>生命周期到了之后Cookie的生命周期结束，cookie就无效了</li><li>就算周期内再访问，也<strong>不会重新计时</strong>，不会刷新</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaEE </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+            <tag> 后台 </tag>
+            
+            <tag> 基础 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Servlet使用分页技术</title>
       <link href="/2020/07/18/servlet-zhong-shi-yong-fen-ye/"/>
       <url>/2020/07/18/servlet-zhong-shi-yong-fen-ye/</url>
@@ -250,19 +279,6 @@
       <url>/2020/06/28/markdown-xue-xi/</url>
       
         <content type="html"><![CDATA[<h1 id="Markdown学习"><a href="#Markdown学习" class="headerlink" title="Markdown学习"></a>Markdown学习</h1><h3 id="1-什么是Markdown？"><a href="#1-什么是Markdown？" class="headerlink" title="1.什么是Markdown？"></a>1.什么是Markdown？</h3><p>​        Markdown是一种可以使用普通文本编辑器编写的<a href="https://baike.baidu.com/item/标记语言/5964436" target="_blank" rel="noopener">标记语言</a>，通过简单的标记语法，它可以使普通文本内容具有一定的格式。</p><p>​        Markdown具有一系列衍生版本，用于扩展Markdown的功能（如表格、脚注、内嵌HTML等等），这些功能原初的Markdown尚不具备，它们能让Markdown转换成更多的格式，例如LaTeX，Docbook。Markdown增强版中比较有名的有Markdown Extra、MultiMarkdown、 Maruku等。这些衍生版本要么基于工具，如Pandoc；要么基于网站，如GitHub和Wikipedia，在语法上基本兼容，但在一些语法和渲染效果上有改动。</p><h3 id="2-基本语法"><a href="#2-基本语法" class="headerlink" title="2.基本语法"></a>2.基本语法</h3><hr><h4 id="2-1常用语法："><a href="#2-1常用语法：" class="headerlink" title="2.1常用语法："></a>2.1常用语法：</h4><table><thead><tr><th>描述</th><th align="center">输入</th><th align="center">显示效果</th></tr></thead><tbody><tr><td>斜体</td><td align="center">*文本*</td><td align="center"><em>嘤嘤嘤</em></td></tr><tr><td>粗体</td><td align="center">**文本**</td><td align="center"><strong>嘤嘤嘤</strong></td></tr><tr><td>斜体加粗</td><td align="center">***文本***</td><td align="center"><strong><em>嘤嘤嘤</em></strong></td></tr><tr><td>删除线</td><td align="center">~~文本~~</td><td align="center"><del>嘤嘤嘤</del></td></tr><tr><td>链接</td><td align="center">[百度一下](<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>)</td><td align="center"><a href="https://www.baidu.com" target="_blank" rel="noopener">百度一下</a></td></tr><tr><td>图片</td><td align="center">![图片下方文字](图片地址 &quot;鼠标悬停时显示的文字&quot;)</td><td align="center">ps: 悬停文字可不要</td></tr><tr><td>无序列表</td><td align="center">* 文本</td><td align="center">ps:- 文本 或 + 文本 也行</td></tr><tr><td>有序列表</td><td align="center">1. 文本</td><td align="center"></td></tr><tr><td>引用</td><td align="center">&gt; 文本</td><td align="center">可以嵌套，如&gt;&gt;、&gt;&gt;&gt;……</td></tr><tr><td>分割线</td><td align="center">- - - 或 ***(3个或以上)</td><td align="center"></td></tr><tr><td>代码</td><td align="center">`单行`          ```多行```</td><td align="center"></td></tr></tbody></table><blockquote><blockquote><p>百度百科（引用示例：&gt;&gt;）</p></blockquote></blockquote><pre class="line-numbers language-示例"><code class="language-示例">示例：多行代码展示<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p><code>单行代码展示</code></p><pre class="line-numbers language-表格"><code class="language-表格">|表头|表头|表头||---|:--:|---:||内容|内容|内容||内容|内容|内容|第二行分割表头和内容。- 有一个就行，为了对齐，多加了几个 文字默认居左-两边加：表示文字居中-右边加：表示文字居右 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><hr><h4 id="2-2-转义字符："><a href="#2-2-转义字符：" class="headerlink" title="2.2 转义字符："></a>2.2 转义字符：</h4><ol><li><p>特殊字符需要用转义字符 \ 输出。 </p></li><li><p>HTML中的转义字符：</p></li></ol><table><thead><tr><th>显示结果</th><th>描述</th><th>输入</th><th>实体编号</th></tr></thead><tbody><tr><td>&nbsp;</td><td>空格</td><td>&amp;nbsp;</td><td>&amp;#160;</td></tr><tr><td>&lt;</td><td>小于</td><td>&amp;lt;</td><td>&amp;#60;</td></tr><tr><td>&gt;</td><td>大于</td><td>&amp;gt;</td><td>&amp;#62;</td></tr><tr><td>&amp;</td><td>和</td><td>&amp;amp;</td><td>&amp;#38;</td></tr><tr><td>&quot;</td><td>双引</td><td>&amp;quot;</td><td>&amp;#34;</td></tr><tr><td>&#39;</td><td>单引</td><td>&amp;apos;</td><td>&amp;#39;</td></tr><tr><td>&divide;</td><td>除号</td><td>&amp;divide;</td><td>&amp;#247;</td></tr><tr><td>&copy;</td><td>版权</td><td>&amp;copy;</td><td>&amp;#169;</td></tr><tr><td>&reg;</td><td>注册商标</td><td>&amp;reg;</td><td>&amp;#174;</td></tr></tbody></table><hr><h4 id="2-3-标题"><a href="#2-3-标题" class="headerlink" title="2.3 标题"></a>2.3 标题</h4><p>对应个数的 “#” 来表示标题级别。</p><p># 一级标题（对应&lt;h1 /&gt;）</p><p>## 二级标题（对应&lt;h2 /&gt;）</p><p>### 三级标题（对应&lt;h3 /&gt;）</p><p>#### 四级标题（对应&lt;h4 /&gt;）</p><p>##### 五级标题（对应&lt;h5 /&gt;）</p><p>###### 六级标题（对应&lt;h6 /&gt;）</p><hr>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>第一篇博客</title>
-      <link href="/2020/06/16/di-yi-pian-bo-ke/"/>
-      <url>/2020/06/16/di-yi-pian-bo-ke/</url>
-      
-        <content type="html"><![CDATA[<h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>MySQL</p><hr><h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>JDBC</p><hr><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2>]]></content>
       
       
       
