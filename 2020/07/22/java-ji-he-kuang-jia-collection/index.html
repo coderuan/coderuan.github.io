@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="JavaScript, wenah阮">
+    <meta name="keywords" content="Java集合框架, wenah阮">
     <meta name="description" content="我爱学习,学习爱我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>JavaScript | wenah阮</title>
+    <title>Java集合框架 | wenah阮</title>
     <link rel="icon" type="image/jpeg" href="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/codeEmoticon/code007.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">JavaScript</h1>
+                    <h1 class="description center-align post-title">Java集合框架</h1>
                 </div>
             </div>
         </div>
@@ -346,18 +346,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/JS/">
-                                <span class="chip bg-color">JS</span>
+                            <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                <span class="chip bg-color">后台</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">基础</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaSE/" class="post-category">
+                                JavaSE
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -366,7 +379,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-01
+                    2020-07-22
                 </div>
                 
 
@@ -375,7 +388,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    311
+                    4.1k
                 </div>
                 
 
@@ -387,58 +400,579 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1-为什么要学JavaScript？"><a href="#1-为什么要学JavaScript？" class="headerlink" title="1. 为什么要学JavaScript？"></a>1. 为什么要学JavaScript？</h3><ul>
-<li>表单的注册 —— 表单的页面验证（减轻服务器的压力）</li>
-<li>页面动态效果 —— 树形菜单的使用</li>
-<li>页面内容的动态展示 —— 表单的动态验证、表格的动态数据</li>
-</ul>
-<h3 id="2-JavaScript的特点"><a href="#2-JavaScript的特点" class="headerlink" title="2. JavaScript的特点"></a>2. JavaScript的特点</h3><ul>
-<li>HTML页面添加交互行为</li>
-<li>语法与 Java 类似</li>
-<li>解释性语言，可以边执行边解释</li>
-</ul>
-<h3 id="3-三大组成部分"><a href="#3-三大组成部分" class="headerlink" title="3. 三大组成部分"></a>3. 三大组成部分</h3><ul>
-<li><p>ECMAScript：<a href="http://baike.baidu.com/view/3986646.htm" target="_blank" rel="noopener">Ecma国际</a>以JavaScript为基础制定了<a href="http://baike.baidu.com/view/810176.htm" target="_blank" rel="noopener">ECMAScript</a>标准。</p>
-<ul>
-<li>（函数）</li>
-</ul>
-</li>
-<li><p>DOM：文档对象模型，简单的说，document对象和文档中其他元素</p>
-<ul>
-<li>（如表单、图像、超链接等）</li>
-</ul>
-</li>
-<li><p>BOM：浏览器对象模型，该对象模型提供了独立于内容、可以与浏览器窗口进行互动的对象结构</p>
-<ul>
-<li>（弹窗）</li>
+                <h2 id="一、Java集合框架"><a href="#一、Java集合框架" class="headerlink" title="一、Java集合框架"></a>一、Java集合框架</h2><ul>
+<li>Java 集合框架主要包括两种类型的容器：<ul>
+<li>一种是集合（Collection），存储一个元素集合</li>
+<li>另一种是图（Map），存储键/值对映射</li>
 </ul>
 </li>
 </ul>
-<h3 id="4-引入位置"><a href="#4-引入位置" class="headerlink" title="4. 引入位置"></a>4. 引入位置</h3><ul>
-<li><p><strong>标签中直接使用</strong></p>
+<p>🙏java集合框架位于 <strong>java.util</strong> 包中，开头先放个图：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/JavaSE/Java_Collection.gif" alt="Collection" style="zoom:80%;" />
+
+<p>⭕🔴<strong>Map没有继承Collection接口</strong></p>
 <ul>
-<li><code>&lt;input name=&quot;btn&quot; type=&quot;button&quot; value=&quot;弹出消息框&quot; onclick=&quot;javascript:alert(&#39;欢迎你&#39;);&quot;/&gt;</code></li>
+<li>Produces(翻译：产物)： —— 上图的箭头<code>Map———&gt;Collection</code>表示Map可以生成Collection<ul>
+<li>Map是用<strong>key-value</strong>的形式保存值的，而Collection是单value</li>
+<li>即Map的：<ul>
+<li>key可以转化成Collection的Set（Map的key不能重复，这就是Set的特点）</li>
+<li>value可以转化为Collection的List（Map的value可重复，所以符合List）</li>
 </ul>
-</li>
-<li><p><strong>&lt;head&gt;标签中调用</strong></p>
-<ul>
-<li><strong>内部调用</strong>  </li>
-</ul>
-<pre><code>&lt;script type=”text/javascript”&gt;
-        Javascript语句;
-&lt;/script&gt;</code></pre><ul>
-<li><p><strong>外部调用</strong></p>
-<p><code>&lt;script language=”JavaScript” src=”路径”&gt;&lt;/script&gt;</code></p>
 </li>
 </ul>
 </li>
-<li><p><strong>页面任意位置</strong></p>
+</ul>
+<p>💭简单提一下Iterator迭代器，就是遍历输出，类似for语句，下面再介绍。</p>
+<hr>
+<p>🚩图中的右下角表示工具类：</p>
+<p><strong>Collections</strong>：为所有直接或间接实现了Collection接口的集合类的工具类，该类封装了对集合的各种操作，如<strong>排序、反转、替换</strong>等操作。</p>
+<p><strong>Arrays</strong>：类Arrays为集合的工具类，可使用该类的方法对集合<strong>进行排序、转换为list</strong>等操作。</p>
+<hr>
+<p>集合框架是一个用来代表和操纵集合的统一架构，包含以下内容：</p>
 <ul>
-<li>需要调用的元素要保证解析完成（在body里放在需要调用的元素语句后面，最好放在末尾）</li>
+<li><strong>接口：</strong>是代表集合的抽象数据类型。例如 Collection、List、Set、Map 等。<ul>
+<li>之所以定义多个接口，是为了以不同的方式操作集合对象</li>
+</ul>
+</li>
+<li><strong>实现（类）：</strong>是集合接口的具体实现。从本质上讲，它们是可重复使用的数据结构。<ul>
+<li>例如：ArrayList、LinkedList、HashSet、HashMap。</li>
+</ul>
+</li>
+<li><strong>算法：</strong>是实现集合接口的对象里的方法执行的一些有用的计算，例如：搜索和排序。<ul>
+<li>这些算法被称为多态，那是因为相同的方法可以在相似的接口上有着不同的实现。</li>
+</ul>
+</li>
+</ul>
+<p>⚫除了集合，该框架也定义了几个 Map 接口和类。Map 里存储的是键/值对。尽管 Map 不是集合，但是它们完全整合在集合中。</p>
+<hr>
+<h2 id="二、Collection"><a href="#二、Collection" class="headerlink" title="二、Collection"></a>二、Collection</h2><p>集合：用于<strong>存储对象</strong>的容器。集合中可以存储任意类型的对象，长度可变。</p>
+<h3 id="2-1、集合的特点"><a href="#2-1、集合的特点" class="headerlink" title="2.1、集合的特点"></a>2.1、集合的特点</h3><p>（1）集合中存储的元素是<strong>对象</strong></p>
+<p>（2）集合的<strong>长度是可变的</strong></p>
+<p>（3）集合<strong>不可以存储基本数据类型</strong></p>
+<table>
+<thead>
+<tr>
+<th>集合和数组的对比：</th>
+<th>数组</th>
+<th>集合</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>长度</td>
+<td>长度固定</td>
+<td>长度可变(根据加载因子和扩容增量来完成扩容)</td>
+</tr>
+<tr>
+<td>存储</td>
+<td>存储基本数据类型或引用类型</td>
+<td>存储引用类型</td>
+</tr>
+<tr>
+<td>元素类型</td>
+<td>元素类型必须一致</td>
+<td>元素类型可以不一致</td>
+</tr>
+<tr>
+<td>操作难度</td>
+<td>操作复杂</td>
+<td>操作简单（包装有现成的方法）</td>
+</tr>
+</tbody></table>
+<hr>
+<h3 id="2-2、Collection简述"><a href="#2-2、Collection简述" class="headerlink" title="2.2、Collection简述"></a>2.2、Collection简述</h3><ul>
+<li>集合是用于存储对象的容器。<ul>
+<li>而每种容器内部都有其独特的数据结构，正因为不同的容器内部数据结构不同，使其各自有自己独特的使用场景。</li>
+<li>虽然每个容器有其独特的结构但是类似的容器还是存在共性的（至少对容器内部对象的操作方法上是存在共性的），所以这些共性方法能被不断抽取，最终形成了集合框架体系。</li>
 </ul>
 </li>
 </ul>
 <hr>
+<h5 id="List："><a href="#List：" class="headerlink" title="List："></a>List：</h5><p>List是一个继承于Collection的接口，即List是集合中的一种。List是<strong>有序的队列</strong>，List中的每一个元素都有一个索引；第一个元素的索引值是0，往后的元素的索引值依次+1。和Set不同，List中允许有重复的元素。</p>
+<ul>
+<li><strong>List</strong>：实现了Collection接口，存储的数据是有序的、可重复的，可通过索引进行元素访问。<ul>
+<li><strong>ArrayList</strong>：底层实现为<strong>数组</strong>，线程不安全，查找效率高，增删效率低。<ul>
+<li>比较常用的类，一个动态扩容的数组队列；</li>
+<li>它继承于AbstractList，实现了List, RandomAccess, Cloneable, Serializable接口；<ul>
+<li>实现RandomAccess，获得了快速随机访问存储元素的功能，RandomAccess是一个标记接口，没有任何方法；</li>
+<li>实现Cloneable，得到了clone()方法，可以实现克隆功能；</li>
+<li>实现Serializable，表示可以被序列化，通过序列化去传输，典型的应用就是hessian协议；</li>
+</ul>
+</li>
+<li>自动扩容，默认扩容系数为1，每次扩容使用位运算左移一位（即当前容量乘以二）</li>
+<li>插入的元素可以为null</li>
+</ul>
+</li>
+<li><strong>Vector</strong>：vector和ArrayList实现原理相同<ul>
+<li>但是vector是<strong>线程安全</strong>的(synchronized)，效率略低于ArrayList。</li>
+</ul>
+</li>
+<li><strong>Stack</strong>：继承Vector，是一个<strong>先进后出的栈</strong>。<ul>
+<li>除了由Vector定义的所有方法，自己也定义了一些方法：<ul>
+<li><code>boolean empty()//测试堆栈是否为空</code> </li>
+<li><code>Object peek()//查看堆栈顶部的对象,但不从堆栈中移除它</code></li>
+<li><code>Object pop()//移除堆栈顶部的对象,并作为此函数的值返回该对象</code></li>
+<li><code>Object push(Object element)//把对象压入堆栈顶部</code></li>
+<li><code>int search(Object element)//返回对象在堆栈中的位置,以 1 为基数</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>LinkedList</strong>：底层实现为<strong>双向链表</strong>，进行元素的增删效率高，查询效率低。<ul>
+<li>每一个节点都拥有指向前后节点的引用；</li>
+<li>相比于ArrayList来说，LinkedList的随机访问效率更低；</li>
+<li>它继承AbstractSequentialList，实现了List, Deque, Cloneable, Serializable接口。<ul>
+<li>LinkedList实现Deque，Deque 是一个双向队列，也就是既可以先入先出，又可以先入后出，说简单些就是既可以在头部添加元素，也可以在尾部添加元素；</li>
+<li>LinkedList实现Cloneable，得到了clone()方法，可以实现克隆功能；</li>
+<li>LinkedList实现Serializable，表示可以被序列化，通过序列化去传输</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>模仿一下源码做一下：</strong></p>
+<ol>
+<li>创建一个集合的上层接口：</li>
+</ol>
+<pre><code>package com.wenah;
+
+//我们给它设置一些常规增删改查的方法。
+public interface List {
+    //{ps} 添加元素到集合中。
+    boolean add(Object obj);
+    //{ps} 插入元素到集合中。
+    boolean insert(int index, Object obj);
+    //{ps} 移除元素。
+    Object remove(int index);
+    //{ps} 获取元素。
+    Object get(int index);
+    //{ps} 修改元素。
+    boolean set(int index, Object obj);
+    //{ps} 获取元素的个数。
+    int size();
+    //{ps} 打印所有元素。
+    void printList();
+}</code></pre><ol start="2">
+<li>编写实现类：</li>
+</ol>
+<pre><code>package com.wenah;
+
+/*
+ * 这一个就是顺序结构的线性表
+ * */
+public class ArrayList implements List {
+    //{1} 设置一组存储单元: Object[]
+    private Object[] data;
+    //{2} 定一个初始大小: 10
+    private static final int INIT_CAPACITY = 10;
+    //{3} 定一个 size :  有几个元素 (实际元素)。
+    private int size = 0;
+
+    public ArrayList(){
+        this( INIT_CAPACITY );    //默认大小设为10
+    }
+    public ArrayList(int capacity){
+        this.data = new Object[ capacity ];    //自定义大小
+    }
+    @Override
+    public int size() {
+        return this.size;
+    }
+
+    /*
+    [1]添加元素：
+    空间充足 ---&gt; 添加元素(末尾)        
+    空间不够 ---&gt; 进行扩容: ensurecapacity();
+        新长度 = 旧长度 * 1.5
+        旧数组的元素复制到新数组上
+        新元素 ---&gt; 添加元素(末尾)
+    */
+    @Override
+    public boolean add(Object obj) {
+        if( size+1&gt;data.length ){
+            ensurecapacity();
+        }
+        data[ size ] = obj;
+        size ++;
+        return true;
+    }
+
+    private void ensurecapacity() {
+        System.out.println(&quot;{debug} 调用了ensurecapacity().&quot;);
+        Object[] newObj = new Object[ (int)(size*1.5) ];
+        copyArray( data, newObj, 0,data.length );
+        //旧数组的元素复制到新数组上copyArray:
+        //for (int i = 0; i &lt; data.length; i++) {
+        //    newObj[i] = data[i];
+        //}
+        data = newObj;
+    }
+
+    private void copyArray( Object[] src, Object[] dest,
+            int start,int end ){
+        for (int i = start; i &lt; data.length; i++) {
+            dest[i] = data[i];
+        }
+    }
+
+    @Override
+    public Object get(int index) {
+        if( index&lt;0 || index&gt;this.size() ) {
+            System.out.println(&quot;{debug} 超出范围&quot;);
+            return null;
+        }
+        return this.data[index];
+    }
+    @Override
+    public void printList() {
+        for (int i = 0; i &lt; this.size(); i++) {
+            if(i%5==0) {
+                System.out.println(&quot;&quot;);
+            }
+            System.out.printf(&quot;第%d个 :  %s , &quot;,i,data[i] );
+        }
+        System.out.printf(&quot;\b\b  \n&quot;);
+    }
+
+    @Override
+    public boolean insert(int index, Object obj) {
+        if( size+1&gt;data.length ){
+            ensurecapacity();
+        }
+        for (int i = size-1; i &gt;=index; i--) {
+            data[i+1] = data[i];
+        }
+        data[index] = obj;
+        size ++;
+        return true;
+    }
+
+    @Override
+    public Object remove(int index) {
+        if(index&lt;0 || index&gt;size-1) {
+            return null;
+        }
+        Object obj = data[index];
+        for (int i = index; i &lt;= size-1; i++) {
+            if(i==size-1) {
+                data[i] = null;
+                break;
+            }
+            data[i] = data[i+1];
+        }
+        size--;
+        return obj;
+    }
+
+    @Override
+    public boolean set(int index, Object obj) {
+        if(index&lt;0 || index&gt;size-1) {
+            return false;
+        }
+        data[index] = obj;
+        return false;
+    }
+
+}</code></pre><ol start="3">
+<li>测试一下：</li>
+</ol>
+<pre><code>package com.wenah;
+
+public class TestMain {
+    public static void main(String[] args) {
+        List list = new ArrayList();
+        list.add(&quot;aaa&quot;);
+        list.add(&quot;bbb&quot;);
+        list.add(&quot;ccc&quot;);
+        list.add(&quot;ddd&quot;);
+
+        list.printList();
+        list.insert(1, &quot;ruan&quot;);
+        list.printList();
+        list.set(1, &quot;wenah&quot;);
+        list.printList();
+        list.remove(1);
+        list.printList();
+        System.out.println( &quot;size: &quot;+ list.size() );
+    }
+}</code></pre><hr>
+<h5 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h5><p>Set是一个继承于Collection的接口，即Set也是集合中的一种。Set是没有重复元素的集合。</p>
+<ul>
+<li><strong>Set</strong>:存储的元素是无序的、唯一的。在程序运行中，如果使用add添加一个已经存在的元素，将返回false。<ul>
+<li><strong>HashSet</strong>：底层实现为哈希表(链表+数组)<ul>
+<li>线程不安全，查找效率高，增删效率低，通过元素的hashCode和equels方法保证了元素的唯一性；</li>
+<li>当一条链上元素超过8个以上后，会自动转换为红黑树来存储元素，提高查询效率。</li>
+</ul>
+</li>
+<li><strong>TreeSet</strong>：底层实现为二叉树<ul>
+<li>线程不安全，可对元素进行自动排序</li>
+<li>保证元素唯一性的方式是compareTo方法返回0。</li>
+</ul>
+</li>
+<li><strong>LinkedHashSet</strong>：底层实现为链表和哈希表<ul>
+<li>线程不安全，存储的元素时有序的、唯一的；</li>
+<li>通过元素的hashCode和equels方法保证了元素的唯一性。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="Queue"><a href="#Queue" class="headerlink" title="Queue:"></a>Queue:</h5><ul>
+<li>队列，先进先出(FIFO)<ul>
+<li>队列是一种特殊的线性表，它只允许在表的前端进行删除操作，而在表的后端进行插入操；</li>
+<li>LinkedList类实现了Queue接口，因此我们可以把LinkedList当成Queue来用。</li>
+</ul>
+</li>
+</ul>
+<p>Queue以及Deque都是继承于Collection，Deque是Queue的子接口。</p>
+<p>基于它单向队列的特性，可以用在在生产者消费者模式上。</p>
+<p>💨利用阻塞队列BlockingQueue实现生产者消费者模式：</p>
+<ol>
+<li>生产者：</li>
+</ol>
+<pre><code>package com.wenah.testThread;
+
+import java.util.Random;
+import java.util.concurrent.BlockingQueue;
+
+public class Produce implements Runnable{
+
+    private final BlockingQueue&lt;Integer&gt; queue;
+
+    public Produce(BlockingQueue&lt;Integer&gt; q) {
+        this.queue = q;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                Thread.sleep(1000);
+                queue.put(produce());
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private Integer produce() {
+        int i = new Random().nextInt(10)+1;
+        System.out.println(&quot;[生产者]当前线程:&quot;+Thread.currentThread().getId()+&quot;————&gt;生产：&quot;+i);
+        return i;
+    }
+
+}</code></pre><ol start="2">
+<li>消费者：</li>
+</ol>
+<pre><code>package com.wenah.testThread;
+
+import java.util.concurrent.BlockingQueue;
+
+public class Customer implements Runnable{
+
+    private final BlockingQueue&lt;Integer&gt; queue;
+
+    public Customer(BlockingQueue&lt;Integer&gt; q) {
+        this.queue = q;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (true) {
+                Thread.sleep(2000);
+                int i = queue.take();
+                System.out.println(&quot;[消费者]当前线程:&quot;+Thread.currentThread().getId() +&quot;————&gt;消费：&quot;+i);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+}</code></pre><ol start="3">
+<li>测试方法:</li>
+</ol>
+<pre><code>package com.wenah.testThread;
+
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+
+public class TestMain {
+    public static void main(String[] args) {
+        BlockingQueue&lt;Integer&gt; queue = new ArrayBlockingQueue&lt;&gt;(100);
+        Produce p = new Produce(queue);
+        Customer c1 = new Customer(queue);
+        Customer c2 = new Customer(queue);
+
+        new Thread(p).start();
+        new Thread(c1).start();
+        new Thread(c2).start();
+    }
+}</code></pre><hr>
+<h5 id="主要方法："><a href="#主要方法：" class="headerlink" title="主要方法："></a>主要方法：</h5><p>在java1.8的版本中包含了18个方法：</p>
+<pre><code>public interface List&lt;E&gt;extends Collection&lt;E&gt;{}
+//方法介绍:
+add(E e)：返回值是boolean,添加一个元素
+addAll( Collection&lt;? extend E&gt; c )：返回值是boolean类型，将集合C中的所有元素添加到此集合。
+clear()：返回值是void,删除此集合中的所有元素
+contains( Object o)：如果包含元素O则返回为true
+containsAll( Collection&lt;?&gt; c):如果包含集合C返回为true
+equals( Object o):将指定的对象与此集合进行比较已获得相等性
+hashCode():返回类型是int，返回此集合的哈希码值
+isEmpty():如果集合为空则返回true
+itreator()：返回此集合元素的迭代器。
+remove(Object o)：返回类型是boolean,删除指定的元素
+removeIf(Predicte&lt;? super E&gt; filter):删除满足条件的所有元素
+removeAll(Collection&lt;?&gt; c)：返回类型是boolean,删除包含集合c的所有元素。
+size()：返回类型是int，返回此集合的元素数量
+toArray():返回类型是Object[] ，将此集合转化为数组
+stream():返回类型是Stream&lt;E&gt;,返回以此集合作为源的顺序流
+spliterator()：创建一个Spliterator在这个集合中。</code></pre><p>注意：Spliterator（splitable iterator可分割迭代器）接口是Java为了并行遍历数据源中的元素而设计的迭代器，这个可以类比最早Java提供的顺序遍历迭代器Iterator，但一个是顺序遍历，一个是并行遍历。他是从java1.8的版本中开始加进去的。</p>
+<hr>
+<h3 id="2-3、Collection中的迭代器Iterator"><a href="#2-3、Collection中的迭代器Iterator" class="headerlink" title="2.3、Collection中的迭代器Iterator"></a>2.3、Collection中的迭代器Iterator</h3><h5 id="首先介绍下Iterable接口"><a href="#首先介绍下Iterable接口" class="headerlink" title="首先介绍下Iterable接口"></a>首先介绍下Iterable接口</h5><p>iterator()方法是java.lang.Iterable接口,被Collection继承。</p>
+<p>Iterable接口是java 集合框架的顶级接口，实现此接口使集合对象可以通过迭代器<strong>遍历自身元素</strong>，它的成员方法：</p>
+<table>
+<thead>
+<tr>
+<th><strong>修饰符和返回值</strong></th>
+<th><strong>方法名</strong></th>
+<th><strong>描述</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Iterator&lt;T&gt;</td>
+<td><strong>iterator</strong>()</td>
+<td>返回一个内部元素为T类型的迭代器</td>
+</tr>
+<tr>
+<td>default void</td>
+<td><strong>forEach</strong>(Consumer&lt;? super T&gt; action)</td>
+<td>对内部元素进行遍历,并对元素进行指定的操作</td>
+</tr>
+<tr>
+<td>default Spliterator&lt;T&gt;</td>
+<td><strong>spliterator</strong>()</td>
+<td>创建并返回一个可分割迭代器</td>
+</tr>
+</tbody></table>
+<ul>
+<li>Iterable最早出现在JDK 1.5，开始只有iterator()一个抽象方法；<ul>
+<li>需要子类来实现一个内部迭代器Iterator遍历元素。</li>
+</ul>
+</li>
+<li>后两个方法是Java 8后新添加的；<ul>
+<li>forEach(Consumer action)是为了方便遍历操作集合内的元素；</li>
+<li>spliterator()则提供了一个可以并行遍历元素的迭代器，以适应现在cpu多核时代并行遍历的需求。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>另外：</p>
+<p><code>public interface ListIterator&lt;E&gt; extends Iterator&lt;E&gt; {}</code></p>
+<p><strong>ListIterator</strong>（相比于Iterator，它新增了<strong>添加</strong>、<strong>是否存在上一个元素</strong>、<strong>获取上一个元素</strong>等等API接口）</p>
+<hr>
+<h5 id="接着说下迭代器的使用"><a href="#接着说下迭代器的使用" class="headerlink" title="接着说下迭代器的使用"></a>接着说下迭代器的使用</h5><ul>
+<li>Collection实现了Iterable接口，表明集合都是<strong>可迭代的</strong>；<ul>
+<li>功能比较简单，并且只能单向移动；</li>
+<li>可以用iterable()方法获取集合对应的迭代器；</li>
+<li>也可以使用增强的for循环进行迭代。</li>
+</ul>
+</li>
+</ul>
+<p>⭕增强for循环<strong>内部是使用的Iterator来遍历</strong>的，只能遍历<strong>数组</strong>和<strong>实现了Iterable接口的集合</strong>。</p>
+<ul>
+<li><p>优点是写法简便，无需获得数组、集合长度，也无需根据索引来访问元素</p>
+</li>
+<li><p>缺点是不能在循环里动态的删除元素和获取元素下标。</p>
+</li>
+</ul>
+<p>💦<strong>使用Iterator迭代：</strong></p>
+<p>(1) iterator()：容器返回一个Iterator。</p>
+<p>(2) next()：获得序列中的下一个元素并返回。第一次调用Iterator的next()方法，它返回序列的第一个元素。</p>
+<p>(3) hasNext()：检查序列中是否还有元素，返回boolean型数据。</p>
+<p>(4) remove()：删除元素并返回的删除的元素。</p>
+<pre><code>List list = new ArrayList();
+list.add(&quot;a&quot;);
+list.add(&quot;b&quot;);
+list.add(&quot;c&quot;);
+list.add(&quot;d&quot;);
+//迭代器迭代
+Iterator iter = list.iterator();
+while( iter.hasNext()){
+    String str = (String)iter.next();
+    System.out.println(str);
+}
+//foreach迭代
+for(String s : list) {
+    System.out.println(s);
+}</code></pre><ul>
+<li>❗进行迭代遍历的时候我们需要注意这种情况，就是在遍历的过程中，如果<strong>对元素进行添加删除</strong>，那么会造成并行修改异常(ConcurrentModificationException)<ul>
+<li>Iterator遍历Collection时，是fail-fast机制的。</li>
+<li>即当某一个线程A通过iterator去遍历某集合的过程中，若该集合的内容被其他线程所改变了；那么线程A访问集合时，就会抛出ConcurrentModificationException异常，产生fail-fast事件。</li>
+</ul>
+</li>
+</ul>
+<p>如下：</p>
+<pre><code>Iterator&lt;Integer&gt; iterator = list.iterator();
+while(iterator.hasNext()){
+    Integer i = iterator.next();
+    if (i == 2) {
+        list.remove(i);//这样移除是不正确的
+    }
+}
+
+//对于这种情况,我们应当使用迭代器Iterator内部的remove()方法,
+//而不是使用集合list直接删除元素,正确写法为
+Iterator&lt;Integer&gt; iterator = list.iterator();
+    while (iterator.hasNext()) {
+    Integer i = iterator.next();
+    if (i == 2) {
+        iterator.remove();    //使用迭代器的remove()方法进行删除元素
+    }
+}
+</code></pre><hr>
+<h5 id="最后介绍下实现Iterable接口"><a href="#最后介绍下实现Iterable接口" class="headerlink" title="最后介绍下实现Iterable接口"></a>最后介绍下实现Iterable接口</h5><ul>
+<li>如果自己写一个集合：实现Iterable接口，并可以使用<strong>增强型for语句</strong>形式遍历。<ul>
+<li>那么需要<strong>重写</strong>一个迭代器(Iterator)并返回它，如下：</li>
+</ul>
+</li>
+</ul>
+<pre><code>public class MyCollection&lt;E&gt; implements Iterable&lt;E&gt; {
+    @Override
+    public Iterator iterator() {
+        return new MyIterator();//返回一个迭代器对象
+    }
+
+    //在这里实现集合的方法
+
+    //使用内部类MyIterator
+    private class MyIterator implements Iterator&lt;E&gt;{
+        /*
+            为了使用增强的for循环,
+            需要重写hasNext()、next()
+        */
+        @Override
+        public boolean hasNext() {
+            return false;    //实现方法,返回一个boolean类型数据
+        }
+        @Override
+        public E next() {
+            return null;    //实现方法,返回下一个要取的数据
+        }
+    }
+}</code></pre><hr>
+<h2 id="二、Map"><a href="#二、Map" class="headerlink" title="二、Map"></a>二、Map</h2><p>Map提供key到value的映射。一个Map中不能包含相同的key，每个key只能映射一个value。Map接口提供3种集合的视图，Map的内容可以被当作一组key集合，一组value集合，或者一组key-value映射。</p>
+<ul>
+<li>key底层就算set实现的，映射到value上</li>
+<li>value底层就是一个链表</li>
+</ul>
+<p>🙃先不写了，把框架复习一下，准备一下面试吧。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>基础知识，要牢固！</p>
+<blockquote>
+<p><a href="https://www.cnblogs.com/bushi/p/6647006.html" target="_blank" rel="noopener">java 集合框架(二)Iterable接口</a></p>
+</blockquote>
 
             </div>
             <hr/>
@@ -454,7 +988,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">wenah阮</a>
+                    <a href="/about" rel="external nofollow noreferrer">阮阮阮</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -464,7 +998,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/07/01/javascript/">https://coderuan.github.io/2020/07/01/javascript/</a>
+                    <a href="https://coderuan.github.io/2020/07/22/java-ji-he-kuang-jia-collection/">https://coderuan.github.io/2020/07/22/java-ji-he-kuang-jia-collection/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -477,7 +1011,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">wenah阮</a>
+                    <a href="/about" target="_blank">阮阮阮</a>
                     !
                 </span>
             </div>
@@ -502,12 +1036,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/JS/">
-                                    <span class="chip bg-color">JS</span>
+                                <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                    <span class="chip bg-color">后台</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">基础</span>
                                 </a>
                             
                         </div>
@@ -938,16 +1476,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/07/java-yu-yan-gai-shu/">
+                <a href="/2020/07/22/java-ji-he-kuang-jia-collection/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/7.jpg" class="responsive-img" alt="Java基础">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/codeEmoticon/code007.jpg" class="responsive-img" alt="Java集合框架">
                         
-                        <span class="card-title">Java基础</span>
+                        <span class="card-title">Java集合框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -957,9 +1496,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -972,6 +1511,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -998,55 +1538,51 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/06/30/ge-shi-hua-shu-chu/">
+                <a href="/2020/07/19/tcp-ip/">
                     <div class="card-image">
                         
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/high/high011.jpg" class="responsive-img" alt="TCP/IP简述">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/2.jpg" class="responsive-img" alt="格式化输出">
-                        
-                        <span class="card-title">格式化输出</span>
+                        <span class="card-title">TCP/IP简述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            格式化输出System.out.printf(); 方法的使用
-
-
-占位符
-说明
-限定位宽
-输出
-
-
-
-%s
-以字符串的形式输出
-%8s
-最多8个字符
-
-
-%f
-以浮点类型的形式输出
-%[位宽] (.) [保留小数个数]f
-
-
-
-%c
-以字
+                            计算机网络基础记录(发动基础精通buff)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            wenah阮
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaEE/" class="post-category">
+                                    JavaEE
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%8D%8F%E8%AE%AE/">
+                        <span class="chip bg-color">协议</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
+                    </a>
+                    
                 </div>
                 
             </div>
