@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTTP基础, wenah阮">
+    <meta name="keywords" content="MyBatis框架简单使用实例, wenah阮">
     <meta name="description" content="尽力、随缘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>HTTP基础 | wenah阮</title>
+    <title>MyBatis框架简单使用实例 | wenah阮</title>
     <link rel="icon" type="image/jpeg" href="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/mybatis-logo.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTTP基础</h1>
+                    <h1 class="description center-align post-title">MyBatis框架简单使用实例</h1>
                 </div>
             </div>
         </div>
@@ -346,16 +346,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
+                            <a href="/tags/Java/">
+                                <span class="chip bg-color">Java</span>
                             </a>
                         
-                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                <span class="chip bg-color">笔记</span>
+                            <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                <span class="chip bg-color">后台</span>
                             </a>
                         
-                            <a href="/tags/HTTP/">
-                                <span class="chip bg-color">HTTP</span>
+                            <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                <span class="chip bg-color">框架</span>
                             </a>
                         
                     </div>
@@ -366,8 +366,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/HTTP%E5%8D%8F%E8%AE%AE/" class="post-category">
-                                HTTP协议
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                框架
                             </a>
                         
                     </div>
@@ -379,7 +379,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-10
+                    2020-07-30
                 </div>
                 
 
@@ -388,7 +388,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.3k
+                    1.7k
                 </div>
                 
 
@@ -400,263 +400,213 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="1、HTTP简介"><a href="#1、HTTP简介" class="headerlink" title="1、HTTP简介"></a>1、HTTP简介</h3><h4 id="1-1、-HTTP是什么？"><a href="#1-1、-HTTP是什么？" class="headerlink" title="1.1、 HTTP是什么？"></a>1.1、 HTTP是什么？</h4><ol>
-<li><p>HTTP协议是 <strong>Hyper Text Transfer Protocol</strong>（超文本传输协议）的缩写。</p>
-</li>
-<li><p>是用于万维网（WWW:World Wide Web）传输超文本的传送协议，规定WWW服务器与浏览器之间信息传递规范。（HTTP协议 <strong>永远都是</strong> 客户端发起请求，服务器回送响应）</p>
-</li>
-<li><p>HTTP基于TCP/IP通信协议来传递数据（HTML 文件, 图片文件, 查询结果等），默认端口号为80。</p>
-</li>
-</ol>
-<h4 id="1-2、-三个特性"><a href="#1-2、-三个特性" class="headerlink" title="1.2、 三个特性"></a>1.2、 三个特性</h4><ul>
-<li>HTTP是无连接的：每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。（连接是有限的，并且及时地释放连接提高服务器的执行效率）</li>
-<li>HTTP是媒体独立的：只要客户端和服务器知道如何处理数据内容，任何类型的数据都可以通过HTTP发送。客户端以及服务器指定使用适合的MIME-type内容类型。（MIME-type：如Content-Type: text/HTML）</li>
-<li>HTTP是无状态：无状态协议，即服务器不保留与客户交易时的任何状态。同一个客户端的这次请求和上次请求是没有对应关系。这就大大减轻了服务器记忆负担，从而保持较快的响应速度。</li>
+                <h2 id="创建一个MyBatis使用实例"><a href="#创建一个MyBatis使用实例" class="headerlink" title="创建一个MyBatis使用实例"></a>创建一个MyBatis使用实例</h2><h3 id="1、前期准备"><a href="#1、前期准备" class="headerlink" title="1、前期准备"></a>1、前期准备</h3><ul>
+<li>数据库：MySQL5.5</li>
+<li>数据库管理和设计工具：Navicat</li>
+<li>Java集成开发工具：IDEA</li>
 </ul>
-<h4 id="1-3、-MIME-type-是什么？"><a href="#1-3、-MIME-type-是什么？" class="headerlink" title="1.3、 MIME-type 是什么？"></a>1.3、 MIME-type 是什么？</h4><ul>
-<li><p>MIME (<strong>M</strong>ultipurpose <strong>I</strong>nternet <strong>M</strong>ail <strong>E</strong>xtensions) —— 描述消息内容类型的因特网标准。</p>
-</li>
-<li><p>也就是资源的媒体类型，通常只有一些在互联网上获得广泛应用的格式才会获得一个 MIME Type。</p>
-</li>
-<li><p>如果是某个客户端自己定义的格式，一般只能以 application/x- 开头。</p>
-</li>
-</ul>
-<p><strong>每个MIME类型由两部分组成：</strong></p>
-<ol>
-<li><p>前面是数据的大类别，例如声音audio、图象image等</p>
-</li>
-<li><p>后面定义具体的种类。</p>
-</li>
-</ol>
-<p><strong>常见的MIME类型：</strong></p>
-<ul>
-<li>超文本标记语言文本 .htm、.html   ——  <strong>text/html</strong> </li>
-<li>普通文本 .txt   ——  <strong>text/plain</strong></li>
-<li>RTF文本 .rtf   ——  <strong>application/rtf</strong></li>
-<li>GIF图形 .gif   ——  <strong>image/gif</strong> </li>
-<li>JPEG图形 .ipeg、.jpg   ——  <strong>image/jpeg</strong></li>
-<li>au声音文件 .au   ——  <strong>audio/basic</strong></li>
-<li>MIDI音乐文件 mid、.midi   ——  <strong>audio/midi</strong></li>
-<li>RealAudio音乐文件 .ra、.ram   ——  <strong>audio/x-pn-realaudio</strong> </li>
-<li>MPEG文件 .mpg、.mpeg   ——  <strong>video/mpeg</strong> </li>
-<li>AVI文件 .avi   ——  <strong>video/x-msvideo</strong> </li>
-<li>GZIP文件 .gz   ——  <strong>application/x-gzip</strong> </li>
-<li>TAR文件 .tar   ——  <strong>application/x-tar</strong> </li>
-</ul>
-<h4 id="1-4、-HTTP的工作原理"><a href="#1-4、-HTTP的工作原理" class="headerlink" title="1.4、 HTTP的工作原理"></a>1.4、 HTTP的工作原理</h4><p>一次HTTP操作称为一个事务，其工作过程可分为四步：</p>
-<p>（1）客户与服务器建立连接（开始一个链接，如点击 &lt;a href=&quot;<a href="https://coderuan.cn&quot;" target="_blank" rel="noopener">https://coderuan.cn&quot;</a> /&gt;wenah阮&lt;/a&gt; 标签）</p>
-<p>（2）客户向服务器提出请求（格式为：请求行、请求头部、空行和请求数据四个部分组成）</p>
-<p>（3）服务器接受请求，并根据请求返回相应的应答（分别是：状态行、消息报头、空行和响应正文）</p>
-<p>（4）客户与服务器关闭连接</p>
-<ul>
-<li>客户与服务器之间的HTTP连接是一种一次性连接，它限制每次连接只处理一个请求，当服务器返回本次请求的应答后便立即关闭连接，下次请求再重新建立连接。</li>
-<li>这种一次性连接主要考虑到WWW服务器面向的是Internet中成干上万个用户，且只能提供有限个连接，故服务器不会让一个连接处于等待状态，及时地释放连接可以大大提高服务器的执行效率。</li>
+<h3 id="2、准备数据库"><a href="#2、准备数据库" class="headerlink" title="2、准备数据库"></a>2、准备数据库</h3><p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192130857.png" alt="image-20200730192130857"></p>
+<p>id 设置主键自动增长</p>
+<h3 id="3、下载MyBatis的jar包"><a href="#3、下载MyBatis的jar包" class="headerlink" title="3、下载MyBatis的jar包"></a>3、下载MyBatis的jar包</h3><ul>
+<li>官网地址: <a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener">http://www.mybatis.org/mybatis-3/</a></li>
+<li>开发 jar 包下载地址: <a href="https://github.com/mybatis/mybatis-3/releases" target="_blank" rel="noopener">https://github.com/mybatis/mybatis-3/releases</a></li>
+<li>Mybatis 整合 Spring 的 jar 包下载地址: <a href="https://github.com/mybatis/spring/releases" target="_blank" rel="noopener">https://github.com/mybatis/spring/releases</a></li>
 </ul>
 <hr>
-<h3 id="2、HTTP请求方法（9种）"><a href="#2、HTTP请求方法（9种）" class="headerlink" title="2、HTTP请求方法（9种）"></a>2、HTTP请求方法（9种）</h3><ul>
-<li><p>HTTP1.0 定义了三种请求方法： GET, POST 和 HEAD方法（常用的请求方法是GET和POST）</p>
-</li>
-<li><p>HTTP1.1 新增了六种请求方法：OPTIONS、PUT、PATCH、DELETE、TRACE 和 CONNECT 方法。</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="left">序号</th>
-<th align="left">方法</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1</td>
-<td align="left">GET</td>
-<td align="left">请求指定的页面信息，并返回实体主体。</td>
-</tr>
-<tr>
-<td align="left">2</td>
-<td align="left">HEAD</td>
-<td align="left">类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头</td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">POST</td>
-<td align="left">向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST 请求可能会导致新的资源的建立和/或已有资源的修改。</td>
-</tr>
-<tr>
-<td align="left">4</td>
-<td align="left">PUT</td>
-<td align="left">从客户端向服务器传送的数据取代指定的文档的内容。</td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">DELETE</td>
-<td align="left">请求服务器删除指定的页面。</td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">CONNECT</td>
-<td align="left">HTTP/1.1 协议中预留给能够将连接改为管道方式的代理服务器。</td>
-</tr>
-<tr>
-<td align="left">7</td>
-<td align="left">OPTIONS</td>
-<td align="left">允许客户端查看服务器的性能。</td>
-</tr>
-<tr>
-<td align="left">8</td>
-<td align="left">TRACE</td>
-<td align="left">回显服务器收到的请求，主要用于测试或诊断。</td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">PATCH</td>
-<td align="left">是对 PUT 方法的补充，用来对已知资源进行局部更新 。</td>
-</tr>
-</tbody></table>
-<h4 id="2-1、GET和POST方法区别"><a href="#2-1、GET和POST方法区别" class="headerlink" title="2.1、GET和POST方法区别"></a>2.1、GET和POST方法区别</h4><ol>
-<li><p><strong>使用方式</strong>：GET是从服务器上获取数据；POST是向服务器传送数据。</p>
-</li>
-<li><p><strong>提交方式</strong>：在客户端，GET通过URL提交数据，数据在URL中可见；POST把数据放在form的数据体内提交。</p>
-</li>
-<li><p><strong>数据容量</strong>：GET提交的数据最多只有1024字节；POST提交的数据量无限制。</p>
-</li>
-<li><p><strong>数据安全</strong>：使用 GET 参数会显示在地址栏上，而 POST 不会，所以如果包含<strong>敏感数据</strong>，为了安全，用POST。</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">GET</th>
-<th align="left">POST</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">后退按钮/刷新</td>
-<td align="left">无害</td>
-<td align="left">数据会被重新提交（浏览器应该告知用户数据会被重新提交）。</td>
-</tr>
-<tr>
-<td align="left">书签</td>
-<td align="left">可收藏为书签</td>
-<td align="left">不可收藏为书签</td>
-</tr>
-<tr>
-<td align="left">缓存</td>
-<td align="left">能被缓存</td>
-<td align="left">不能缓存</td>
-</tr>
-<tr>
-<td align="left">编码类型</td>
-<td align="left">application/x-www-form-urlencoded</td>
-<td align="left">application/x-www-form-urlencoded 或 multipart/form-data。为二进制数据使用多重编码。</td>
-</tr>
-<tr>
-<td align="left">历史</td>
-<td align="left">参数保留在浏览器历史中。</td>
-<td align="left">参数不会保存在浏览器历史中。</td>
-</tr>
-<tr>
-<td align="left">对数据长度的限制</td>
-<td align="left">当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。</td>
-<td align="left">无限制。</td>
-</tr>
-<tr>
-<td align="left">对数据类型的限制</td>
-<td align="left">只允许 ASCII 字符。</td>
-<td align="left">没有限制。也允许二进制数据。</td>
-</tr>
-<tr>
-<td align="left">安全性</td>
-<td align="left">与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！</td>
-<td align="left">POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。</td>
-</tr>
-<tr>
-<td align="left">可见性</td>
-<td align="left">数据在 URL 中对所有人都是可见的。</td>
-<td align="left">数据不会显示在 URL 中。</td>
-</tr>
-</tbody></table>
-<h4 id="2-2、何时使用GET？"><a href="#2-2、何时使用GET？" class="headerlink" title="2.2、何时使用GET？"></a>2.2、何时使用GET？</h4><p>检索信息时一般用GET方法，如检索文档、图表、或数据库查询结果。要检索的信息作为字符序列传递，称为查询字符串。GET方法是表单默认的方法。</p>
-<p>GET 请求的查询字符串（名称/值对）是在 URL 中发送的：</p>
-<p><code>/test/demo_form.asp?name1=value1&amp;name2=value2</code></p>
-<p>有关 GET 请求的其他一些注释：</p>
-<ul>
-<li>GET 请求可被缓存</li>
-<li>GET 请求保留在浏览器历史记录中</li>
-<li>GET 请求可被收藏为书签</li>
-<li>GET 请求不应在处理敏感数据时使用</li>
-<li>GET 请求有长度限制</li>
-<li>GET 请求只应当用于取回数据</li>
-</ul>
-<h4 id="2-3、何时使用POST"><a href="#2-3、何时使用POST" class="headerlink" title="2.3、何时使用POST"></a>2.3、何时使用POST</h4><p>POST 请求的查询字符串（名称/值对）是在 HTTP 消息主体中发送的：</p>
-<pre><code>POST /test/demo_form.asp HTTP/1.1
-Host: w3schools.com
-name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些注释：</p>
-<ul>
-<li>POST 请求不会被缓存</li>
-<li>POST 请求不会保留在浏览器历史记录中</li>
-<li>POST 不能被收藏为书签</li>
-<li>POST 请求对数据长度没有要求</li>
-</ul>
+<p>MyBatis 的 <strong>核心包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192637460.png" alt="image-20200730192637460" style="zoom:50%;" /></p>
 <hr>
-<h3 id="3、HTTP状态码"><a href="#3、HTTP状态码" class="headerlink" title="3、HTTP状态码"></a>3、HTTP状态码</h3><p>HTTP状态码由三个十进制数字组成，第一个十进制数字定义了状态码的类型。</p>
-<p>HTTP状态码共分为5种类型：</p>
-<table>
-<thead>
-<tr>
-<th align="left">分类</th>
-<th align="left">分类描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">1**</td>
-<td align="left">信息 —— 服务器收到请求，需要请求者继续执行操作</td>
-</tr>
-<tr>
-<td align="left">2**</td>
-<td align="left">成功 —— 操作被成功接收并处理（如200：请求成功，其后是对GET和POST请求的应答文档）</td>
-</tr>
-<tr>
-<td align="left">3**</td>
-<td align="left">重定向 —— 需要进一步的操作以完成请求</td>
-</tr>
-<tr>
-<td align="left">4**</td>
-<td align="left">客户端错误 —— 请求包含语法错误或无法完成请求（如400：Bad Request 服务器未能理解请求、404：Not Found 服务器无法找到被请求的页面。）</td>
-</tr>
-<tr>
-<td align="left">5**</td>
-<td align="left">服务器错误 —— 服务器在处理请求的过程中发生了错误（如500：Internal Server Error内部服务器错误，请求未完成。服务器遇到不可预知的情况。）</td>
-</tr>
-</tbody></table>
+<p>以及 <strong>lib目录</strong> 下的依赖包：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193034012.png" alt="image-20200730193034012" style="zoom:50%;" /></p>
 <hr>
-<h3 id="4、-什么是HTTPS"><a href="#4、-什么是HTTPS" class="headerlink" title="4、 什么是HTTPS"></a>4、 什么是HTTPS</h3><ul>
-<li><p>HTTPS（全称：Hypertext Transfer Protocol over Secure Socket Layer），是<strong>以安全为目标</strong>的HTTP通道。</p>
-</li>
-<li><p>简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL。</p>
-</li>
+<p>💢还要准备 <strong>mysql驱动包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193319963.png" alt="image-20200730193319963" style="zoom:50%;" /></p>
+<hr>
+<h3 id="4、开始环境搭建"><a href="#4、开始环境搭建" class="headerlink" title="4、开始环境搭建"></a>4、开始环境搭建</h3><h4 id="4-1、创建项目："><a href="#4-1、创建项目：" class="headerlink" title="4.1、创建项目："></a>4.1、创建项目：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193757399.png" alt="image-20200730193757399" style="zoom:50%;" />
+
+<h4 id="4-2、部署jar包"><a href="#4-2、部署jar包" class="headerlink" title="4.2、部署jar包"></a>4.2、部署jar包</h4><ul>
+<li>创建 lib 文件夹，并把上面的 <strong>jar包</strong> 放入lib文件夹里</li>
 </ul>
-<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/HTTPS.jpg" alt="图解" title="图解"></p>
-<p>有两种基本的加解密算法类型：</p>
-<ol>
-<li><p>对称加密：密钥只有一个，加密解密为同一个密码，且加解密速度快，典型的对称加密算法有DES、AES等；</p>
-</li>
-<li><p>非对称加密：密钥成对出现（且根据公钥无法推知私钥，根据私钥也无法推知公钥），加密解密使用不同密钥（公钥加密需要私钥解密，私钥加密需要公钥解密），相对对称加密速度较慢，典型的非对称加密算法有RSA、DSA等。</p>
-</li>
-</ol>
-<p><strong>https通信的优点：</strong></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194206870.png" alt="image-20200730194206870"></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194231614.png" alt="image-20200730194231614" style="zoom:33%;" /><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194328718.png" alt="image-20200730194328718" style="zoom:33%;" /></p>
 <ul>
-<li>客户端产生的密钥只有客户端和服务器端能得到</li>
-<li>加密的数据只有客户端和服务器端才能得到明文</li>
-<li>客户端到服务端的通信是安全的。</li>
+<li>然后，选中所有的jar包，右键添加到库中：</li>
 </ul>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194627705.png" alt="image-20200730194627705" style="zoom: 33%;" />
+
+<h4 id="4-3、在src目录下，创建-mybatis-cfg-xml-文件："><a href="#4-3、在src目录下，创建-mybatis-cfg-xml-文件：" class="headerlink" title="4.3、在src目录下，创建 mybatis.cfg.xml 文件："></a>4.3、在src目录下，创建 <strong>mybatis.cfg.xml</strong> 文件：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730195221629.png" alt="image-20200730195221629" style="zoom: 50%;" />
+
+<h4 id="4-4、log4j-的配置文件"><a href="#4-4、log4j-的配置文件" class="headerlink" title="4.4、log4j 的配置文件"></a>4.4、log4j 的配置文件</h4><ul>
+<li>可以不配置，不影响。（帮助文档里有相关介绍）</li>
+</ul>
+<pre><code># 这里配置的主要作用是debug的时候，输出执行的sql语句
+# Global logging configuration
+log4j.rootLogger=DEBUG, stdout
+# Console output...
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n</code></pre><h4 id="4-5、编写数据库的配置文件-db-properties："><a href="#4-5、编写数据库的配置文件-db-properties：" class="headerlink" title="4.5、编写数据库的配置文件 db.properties："></a>4.5、编写数据库的配置文件 <strong>db.properties</strong>：</h4><p>✔输入自己的数据库用户名和密码</p>
+<pre><code>mydriver=com.mysql.jdbc.Driver
+myurl=jdbc:mysql://localhost:3306/mybatis_dev?characterEncoding=UTF-8
+myusername=自己设定的账户名
+mypassword=自己设定的密码</code></pre><h4 id="4-6、编写-mybatis-cfg-xml-格式可以在帮助文档中找到"><a href="#4-6、编写-mybatis-cfg-xml-格式可以在帮助文档中找到" class="headerlink" title="4.6、编写 mybatis.cfg.xml (格式可以在帮助文档中找到)"></a>4.6、编写 <strong>mybatis.cfg.xml</strong> (格式可以在帮助文档中找到)</h4><p>下面仅使用最基本的配置：</p>
+<p>（configuration里面的子标签有严格的顺序要求，可Ctrl+鼠标左键点击configuration标签查看，或者查看文档）</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+    &lt;!--数据库的配置文件,里面保存了驱动类、url、用户名、密码--&gt;
+    &lt;properties resource=&quot;db.properties&quot;&gt;&lt;/properties&gt;
+
+    &lt;!--环境配置--&gt;
+    &lt;environments default=&quot;dev&quot;&gt;&lt;!-- 表示默认环境配置是：dev --&gt;
+        &lt;!-- 可以设置多个环境,比如开发、测试和发布分别配一个数据库环境 --&gt;
+        &lt;environment id=&quot;dev&quot;&gt;&lt;!-- 这里只写一个开发用的环境 --&gt;
+            &lt;!-- 使用jdbc事务管理 --&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;&gt;&lt;/transactionManager&gt;
+            &lt;!-- 数据库连接池 --&gt;      
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;${mydriver}&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;${myurl}&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;${myusername}&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;${mypassword}&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+
+    &lt;!----&gt;
+    &lt;mappers&gt;
+        &lt;mapper resource=&quot;com/wenah/bean/UserMapper.xml&quot;&gt;&lt;/mapper&gt;
+    &lt;/mappers&gt;
+
+&lt;/configuration&gt;
+
+</code></pre><h4 id="4-7、创建实体类User"><a href="#4-7、创建实体类User" class="headerlink" title="4.7、创建实体类User"></a>4.7、创建实体类User</h4><ul>
+<li>使用MyBatis，POJO实体类名称和数据库表名最好一致<ul>
+<li>如果不一致，查询时的返回值会和字段匹配不上（使用了反射机制）</li>
+<li>解决方案是：配置映射（后面再介绍）</li>
+</ul>
+</li>
+</ul>
+<pre><code>package com.wenah.bean;
+
+public class User {
+    private int id;
+    private String username;
+    private String password;
+    private int phone;
+
+    public int getId() {return id;}
+    public void setId(int id) {this.id = id;}
+
+    public String getUsername() {return username;}
+    public void setUsername(String username) {this.username = username;}
+
+    public String getPassword() {return password;}
+    public void setPassword(String password) {this.password = password;}
+
+    public long getPhone() {return phone;}
+    public void setPhone(int phone) {this.phone = phone;}
+
+    @Override
+    public String toString() {
+        return &quot;User{&quot; +
+                &quot;id=&quot; + id +
+                &quot;, username=&#39;&quot; + username + &#39;\&#39;&#39; +
+                &quot;, password=&#39;&quot; + password + &#39;\&#39;&#39; +
+                &quot;, phone=&quot; + phone +
+                &#39;}&#39;;
+    }
+}</code></pre><h4 id="4-8、创建sql映射文件UserMapper-xml"><a href="#4-8、创建sql映射文件UserMapper-xml" class="headerlink" title="4.8、创建sql映射文件UserMapper.xml"></a>4.8、创建sql映射文件UserMapper.xml</h4><ul>
+<li><p>Mapper映射文件完成POJO和Sql语句之间的映射</p>
+</li>
+<li><p>命名一般为:xxMapper.xml =&gt; UserMapper.xml</p>
+<ul>
+<li>mapper——namespace属性：命名空间，后面调用sql语句时调用</li>
+<li>select<ul>
+<li>id属性：调用sql语句时调用</li>
+<li>parameterType 属性：传入参数</li>
+<li>resultType属性：返回值类型</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt; 
+&lt;!DOCTYPE mapper
+        PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; 
+        &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;
+&lt;mapper namespace=&quot;uMapper&quot;&gt;&lt;!-- 命名空间名字自定义,使用sql语句时调用 --&gt;
+
+    &lt;!-- 调用sql语句时，使用id=&quot;getUserById&quot;的值来调用 --&gt;
+    &lt;select id=&quot;getUserById&quot; parameterType=&quot;int&quot; resultType=&quot;com.wenah.bean.User&quot;&gt;
+        select * from user_info where id=#{id}
+    &lt;/select&gt;
+
+    &lt;select id=&quot;getUserList&quot; resultType=&quot;com.wenah.bean.User&quot;&gt;
+        select * from user_info
+    &lt;/select&gt;
+
+    &lt;insert id=&quot;addUser&quot; parameterType=&quot;com.wenah.bean.User&quot;&gt;
+        insert into user_info (username,password,phone) values (#{username},#{password},#{phone})
+    &lt;/insert&gt;
+
+&lt;/mapper&gt;</code></pre><p>🔴<strong>mapper映射文件要在MyBatis核心配置文件mybatis.cfg.xml中关联</strong></p>
+<pre><code>&lt;mappers&gt;
+    &lt;mapper resource=&quot;com/wenah/bean/UserMapper.xml&quot;&gt;&lt;/mapper&gt;
+&lt;/mappers&gt;</code></pre><h4 id="4-9、编写测试类"><a href="#4-9、编写测试类" class="headerlink" title="4.9、编写测试类"></a>4.9、编写测试类</h4><pre><code>package com.wenah.test;
+
+import com.wenah.bean.User;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.Test;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.List;
+
+public class TestMain {
+
+    @Test
+    public void testMyBatis() throws IOException {
+
+        //读取核心MyBatis配置文件(使用文件流的方式)
+        //【tips】Resources类导包时注意不要导错了,要导ibatis的包
+        InputStream is = Resources.getResourceAsStream(&quot;mybatis.cfg.xml&quot;);
+
+        //创建SqlSessionFactory对象,完成对配置文件的读取
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(is);
+
+        //创建SqlSession对象,可以调用mapper文件的sql操作(和hibernate的session类似)
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+
+        //uMapper:自定义的命名空间名、getUserById：sql语句的id值
+        /获取到id=1的user_info表的数据，返回唯一值
+        User u = sqlSession.selectOne(&quot;uMapper.getUserById&quot;, 1);
+        System.out.println(u);
+
+        User user = new User();
+        user.setUsername(&quot;神江007&quot;);
+        user.setPassword(&quot;10086&quot;);
+        user.setPhone(8848);
+
+        sqlSession.insert(&quot;uMapper.addUser&quot;, user);
+
+        //这里获得的user1并没有真正存到数据库，只是保存在一级缓存中
+        User user1 = sqlSession.selectOne(&quot;uMapper.getUserById&quot;, 7);
+        System.out.println(user1);
+
+        //MyBatis自动开启事务,需要手动提交,不然更新操作不会持久化到数据库
+        sqlSession.commit();
+    }
+
+}</code></pre><p><strong>运行结果：</strong></p>
+<p>DEBUG [main] - Logging initialized using ‘class org.apache.ibatis.logging.slf4j.Slf4jImpl’ adapter.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - Opening JDBC Connection<br>DEBUG [main] - Created connection 32863545.<br>DEBUG [main] - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1f57539]<br>DEBUG [main] - ==&gt;  Preparing: select * from user_info where id=?<br>DEBUG [main] - ==&gt; Parameters: 1(Integer)<br>DEBUG [main] - &lt;==      Total: 1<br>User{id=1, username=’阮阮阮’, password=’123’, phone=1000}<br>DEBUG [main] - ==&gt;  Preparing: insert into user_info (username,password,phone) values (?,?,?)<br>DEBUG [main] - ==&gt; Parameters: 神江007(String), 10086(String), 8848(Long)<br>DEBUG [main] - &lt;==    Updates: 1<br>DEBUG [main] - ==&gt;  Preparing: select * from user_info where id=?<br>DEBUG [main] - ==&gt; Parameters: 7(Integer)<br>DEBUG [main] - &lt;==      Total: 1<br>User{id=7, username=’神江007’, password=’10086’, phone=8848}<br>DEBUG [main] - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1f57539]</p>
+<p>💦可以看到获取到对象后，才提交的事务。要是不提交事务，也可以在以及缓存中查到对象，不过就不会提交sql语句了，数据库也不会有数据增加。（下次插入值时可看见id=8没有了，直接就是id=9，这时因为MyBatis以及和数据库有联系了，id已经自增了一）</p>
+<p><strong>数据库更新的数据：</strong></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730210429273.png" alt="image-20200730210429273"></p>
 <hr>
-<blockquote>
-<p><a href="https://baike.baidu.com/item/HTTP/243074" target="_blank" rel="noopener">百度百科 HTTP</a></p>
-<p><a href="https://www.runoob.com/http/http-tutorial.html" target="_blank" rel="noopener">菜鸟教程|HTTP</a></p>
-<p><a href="https://www.w3school.com.cn/tags/html_ref_httpmethods.asp" target="_blank" rel="noopener">W3school|HTTP</a></p>
-</blockquote>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>比hibernate快的不是一点半点，果然淘汰不是没有理由的😂</p>
 
             </div>
             <hr/>
@@ -682,7 +632,7 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/07/10/http-bi-ji/">https://coderuan.github.io/2020/07/10/http-bi-ji/</a>
+                    <a href="https://coderuan.github.io/2020/07/30/mybatis-shi-yong-shi-li/">https://coderuan.github.io/2020/07/30/mybatis-shi-yong-shi-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -720,16 +670,16 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
+                                <a href="/tags/Java/">
+                                    <span class="chip bg-color">Java</span>
                                 </a>
                             
-                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                                    <span class="chip bg-color">笔记</span>
+                                <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                                    <span class="chip bg-color">后台</span>
                                 </a>
                             
-                                <a href="/tags/HTTP/">
-                                    <span class="chip bg-color">HTTP</span>
+                                <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                                    <span class="chip bg-color">框架</span>
                                 </a>
                             
                         </div>
@@ -1160,40 +1110,42 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/16/shiro-ji-chu/">
+                <a href="/2020/07/30/mybatis-shi-yong-shi-li/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/7.jpg" class="responsive-img" alt="Shiro系统安全框架">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/mybatis-logo.jpg" class="responsive-img" alt="MyBatis框架简单使用实例">
                         
-                        <span class="card-title">Shiro系统安全框架</span>
+                        <span class="card-title">MyBatis框架简单使用实例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Shiro框架学习记录(发动框架buff)
+                            MyBatis框架学习记录(发动框架精通buff)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-30
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Shiro/" class="post-category">
-                                    Shiro
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    框架
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1201,16 +1153,12 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
                         <span class="chip bg-color">Java</span>
                     </a>
                     
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
+                    </a>
+                    
                     <a href="/tags/%E6%A1%86%E6%9E%B6/">
                         <span class="chip bg-color">框架</span>
-                    </a>
-                    
-                    <a href="/tags/Shiro/">
-                        <span class="chip bg-color">Shiro</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%89%E5%85%A8/">
-                        <span class="chip bg-color">安全</span>
                     </a>
                     
                 </div>
@@ -1224,23 +1172,23 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/09/er-wei-shu-zu-cha-zhao-te-ding-zu-he/">
+                <a href="/2020/07/22/java-ji-he-kuang-jia-collection/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/medias/featureimages/6.jpg" class="responsive-img" alt="二维数组查找特定组合">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/codeEmoticon/code007.jpg" class="responsive-img" alt="Java集合框架">
                         
-                        <span class="card-title">二维数组查找特定组合</span>
+                        <span class="card-title">Java集合框架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            二维数组查找特定字符组合(发动秃头buff)
+                            JavaSE基础记录(发动基础精通buff)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-09
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-22
                             </span>
                         <span class="publish-author">
                             
@@ -1257,12 +1205,16 @@ name1=value1&amp;name2=value2</code></pre><p>有关 POST 请求的其他一些�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">算法</span>
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
+                    <a href="/tags/%E5%90%8E%E5%8F%B0/">
+                        <span class="chip bg-color">后台</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">基础</span>
                     </a>
                     
                 </div>
