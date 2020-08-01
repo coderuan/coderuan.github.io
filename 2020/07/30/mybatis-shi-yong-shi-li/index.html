@@ -405,7 +405,7 @@
 <li>数据库管理和设计工具：Navicat</li>
 <li>Java集成开发工具：IDEA</li>
 </ul>
-<h3 id="2、准备数据库"><a href="#2、准备数据库" class="headerlink" title="2、准备数据库"></a>2、准备数据库</h3><p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192130857.png" alt="image-20200730192130857"></p>
+<h3 id="2、准备数据库"><a href="#2、准备数据库" class="headerlink" title="2、准备数据库"></a>2、准备数据库</h3><p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192130857.png" alt=""></p>
 <p>id 设置主键自动增长</p>
 <h3 id="3、下载MyBatis的jar包"><a href="#3、下载MyBatis的jar包" class="headerlink" title="3、下载MyBatis的jar包"></a>3、下载MyBatis的jar包</h3><ul>
 <li>官网地址: <a href="http://www.mybatis.org/mybatis-3/" target="_blank" rel="noopener">http://www.mybatis.org/mybatis-3/</a></li>
@@ -413,25 +413,25 @@
 <li>Mybatis 整合 Spring 的 jar 包下载地址: <a href="https://github.com/mybatis/spring/releases" target="_blank" rel="noopener">https://github.com/mybatis/spring/releases</a></li>
 </ul>
 <hr>
-<p>MyBatis 的 <strong>核心包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192637460.png" alt="image-20200730192637460" style="zoom:50%;" /></p>
+<p>MyBatis 的 <strong>核心包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730192637460.png" style="zoom:50%;" /></p>
 <hr>
-<p>以及 <strong>lib目录</strong> 下的依赖包：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193034012.png" alt="image-20200730193034012" style="zoom:50%;" /></p>
+<p>以及 <strong>lib目录</strong> 下的依赖包：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193034012.png" style="zoom:50%;" /></p>
 <hr>
-<p>💢还要准备 <strong>mysql驱动包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193319963.png" alt="image-20200730193319963" style="zoom:50%;" /></p>
+<p>💢还要准备 <strong>mysql驱动包</strong>：<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193319963.png" style="zoom:50%;" /></p>
 <hr>
-<h3 id="4、开始环境搭建"><a href="#4、开始环境搭建" class="headerlink" title="4、开始环境搭建"></a>4、开始环境搭建</h3><h4 id="4-1、创建项目："><a href="#4-1、创建项目：" class="headerlink" title="4.1、创建项目："></a>4.1、创建项目：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193757399.png" alt="image-20200730193757399" style="zoom:50%;" />
+<h3 id="4、开始环境搭建"><a href="#4、开始环境搭建" class="headerlink" title="4、开始环境搭建"></a>4、开始环境搭建</h3><h4 id="4-1、创建项目："><a href="#4-1、创建项目：" class="headerlink" title="4.1、创建项目："></a>4.1、创建项目：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730193757399.png" style="zoom:50%;" />
 
 <h4 id="4-2、部署jar包"><a href="#4-2、部署jar包" class="headerlink" title="4.2、部署jar包"></a>4.2、部署jar包</h4><ul>
 <li>创建 lib 文件夹，并把上面的 <strong>jar包</strong> 放入lib文件夹里</li>
 </ul>
-<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194206870.png" alt="image-20200730194206870"></p>
-<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194231614.png" alt="image-20200730194231614" style="zoom:33%;" /><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194328718.png" alt="image-20200730194328718" style="zoom:33%;" /></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194206870.png" alt=""></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194231614.png" style="zoom:33%;" /><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194328718.png" style="zoom:33%;" /></p>
 <ul>
 <li>然后，选中所有的jar包，右键添加到库中：</li>
 </ul>
-<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194627705.png" alt="image-20200730194627705" style="zoom: 33%;" />
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730194627705.png" style="zoom: 33%;" />
 
-<h4 id="4-3、在src目录下，创建-mybatis-cfg-xml-文件："><a href="#4-3、在src目录下，创建-mybatis-cfg-xml-文件：" class="headerlink" title="4.3、在src目录下，创建 mybatis.cfg.xml 文件："></a>4.3、在src目录下，创建 <strong>mybatis.cfg.xml</strong> 文件：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730195221629.png" alt="image-20200730195221629" style="zoom: 50%;" />
+<h4 id="4-3、在src目录下，创建-mybatis-cfg-xml-文件："><a href="#4-3、在src目录下，创建-mybatis-cfg-xml-文件：" class="headerlink" title="4.3、在src目录下，创建 mybatis.cfg.xml 文件："></a>4.3、在src目录下，创建 <strong>mybatis.cfg.xml</strong> 文件：</h4><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730195221629.png" style="zoom: 50%;" />
 
 <h4 id="4-4、log4j-的配置文件"><a href="#4-4、log4j-的配置文件" class="headerlink" title="4.4、log4j 的配置文件"></a>4.4、log4j 的配置文件</h4><ul>
 <li>可以不配置，不影响。（帮助文档里有相关介绍）</li>
@@ -604,7 +604,7 @@ public class TestMain {
 <p>DEBUG [main] - Logging initialized using ‘class org.apache.ibatis.logging.slf4j.Slf4jImpl’ adapter.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - PooledDataSource forcefully closed/removed all connections.<br>DEBUG [main] - Opening JDBC Connection<br>DEBUG [main] - Created connection 32863545.<br>DEBUG [main] - Setting autocommit to false on JDBC Connection [com.mysql.jdbc.JDBC4Connection@1f57539]<br>DEBUG [main] - ==&gt;  Preparing: select * from user_info where id=?<br>DEBUG [main] - ==&gt; Parameters: 1(Integer)<br>DEBUG [main] - &lt;==      Total: 1<br>User{id=1, username=’阮阮阮’, password=’123’, phone=1000}<br>DEBUG [main] - ==&gt;  Preparing: insert into user_info (username,password,phone) values (?,?,?)<br>DEBUG [main] - ==&gt; Parameters: 神江007(String), 10086(String), 8848(Long)<br>DEBUG [main] - &lt;==    Updates: 1<br>DEBUG [main] - ==&gt;  Preparing: select * from user_info where id=?<br>DEBUG [main] - ==&gt; Parameters: 7(Integer)<br>DEBUG [main] - &lt;==      Total: 1<br>User{id=7, username=’神江007’, password=’10086’, phone=8848}<br>DEBUG [main] - Committing JDBC Connection [com.mysql.jdbc.JDBC4Connection@1f57539]</p>
 <p>💦可以看到获取到对象后，才提交的事务。要是不提交事务，也可以在以及缓存中查到对象，不过就不会提交sql语句了，数据库也不会有数据增加。（下次插入值时可看见id=8没有了，直接就是id=9，这时因为MyBatis以及和数据库有联系了，id已经自增了一）</p>
 <p><strong>数据库更新的数据：</strong></p>
-<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730210429273.png" alt="image-20200730210429273"></p>
+<p><img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/image-20200730210429273.png" alt=""></p>
 <hr>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>比hibernate快的不是一点半点，果然淘汰不是没有理由的😂</p>
 
