@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Session和Cookie, wenah阮">
+    <meta name="keywords" content="Maven项目对象模型, wenah阮">
     <meta name="description" content="尽力、随缘">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Session和Cookie | wenah阮</title>
+    <title>Maven项目对象模型 | wenah阮</title>
     <link rel="icon" type="image/jpeg" href="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/down/down007.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/maven-logo-black-on-white.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Session和Cookie</h1>
+                    <h1 class="description center-align post-title">Maven项目对象模型</h1>
                 </div>
             </div>
         </div>
@@ -346,16 +346,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/Maven/">
+                                <span class="chip bg-color">Maven</span>
                             </a>
                         
-                            <a href="/tags/%E5%90%8E%E5%8F%B0/">
-                                <span class="chip bg-color">后台</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                <span class="chip bg-color">基础</span>
+                            <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">工具</span>
                             </a>
                         
                     </div>
@@ -366,8 +362,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaEE/" class="post-category">
-                                JavaEE
+                            <a href="/categories/Maven/" class="post-category">
+                                Maven
                             </a>
                         
                     </div>
@@ -379,7 +375,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-19
+                    2020-08-13
                 </div>
                 
 
@@ -388,7 +384,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    2.2k
                 </div>
                 
 
@@ -400,119 +396,243 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一、Session"><a href="#一、Session" class="headerlink" title="一、Session"></a>一、Session</h2><h3 id="1-1、什么是HttpSession？"><a href="#1-1、什么是HttpSession？" class="headerlink" title="1.1、什么是HttpSession？"></a>1.1、什么是HttpSession？</h3><ul>
-<li>http协议的一次会话，提供了存储和返回标准会话属性的方法。</li>
-<li>标准会话属性如会话标识符、应用数据等，都以“名字——值”对的形式保存在服务器。</li>
-<li>也就是说，HttpSession接口提供了一种<strong>把对象存到内存</strong>、在统一用户的<strong>后继请求中</strong>提取这些对象的标准方法。</li>
+                <h2 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h2><p>Maven是Apache旗下的一个开源项目，是纯java开发，并且只能用来管理java项目以及jar包的。</p>
+<p><a href="https://baike.baidu.com/item/Maven" target="_blank" rel="noopener">Maven</a>项目对象模型(POM)，可以通过一小段描述信息来管理项目的构建，报告和文档的<a href="https://baike.baidu.com/item/项目管理工具/6854630" target="_blank" rel="noopener">项目管理工具</a>软件。</p>
+<blockquote>
+<p>Maven是一个<a href="https://baike.baidu.com/item/项目管理工具" target="_blank" rel="noopener">项目管理工具</a>，它包含了一个项目对象模型 (Project Object Model)，一组标准集合，一个<a href="https://baike.baidu.com/item/项目生命周期" target="_blank" rel="noopener">项目生命周期</a>(Project Lifecycle)，一个依赖管理系统(Dependency Management System)，和用来运行定义在生命周期阶段(phase)中<a href="https://baike.baidu.com/item/插件" target="_blank" rel="noopener">插件</a>(plugin)目标(goal)的逻辑。当你使用Maven的时候，你用一个明确定义的项目对象模型来描述你的项目，然后Maven可以应用横切的逻辑，这些逻辑来自一组共享的（或者自定义的）插件。</p>
+<p>Maven 有一个生命周期，当你运行 mvn install 的时候被调用。这条命令告诉 Maven 执行一系列的有序的步骤，直到到达你指定的生命周期。遍历生命周期旅途中的一个影响就是，Maven 运行了许多默认的<a href="https://baike.baidu.com/item/插件" target="_blank" rel="noopener">插件</a>目标，这些目标完成了像编译和创建一个 JAR 文件这样的工作。</p>
+<p>此外，Maven能够很方便的帮你管理项目报告，生成站点，管理JAR文件，等等。</p>
+</blockquote>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><p>mvn archetype:generate 创建Maven项目</p>
+<p>mvn compile 编译源代码</p>
+<p>mvn deploy 发布项目</p>
+<p>mvn test-compile 编译测试源代码</p>
+<p>mvn test 运行应用程序中的单元测试</p>
+<p>mvn site 生成项目相关信息的网站</p>
+<p>mvn clean 清除项目目录中的生成结果</p>
+<p>mvn package 根据项目生成的jar</p>
+<p>mvn install 在本地Repository中安装jar</p>
+<p>mvn eclipse:eclipse 生成eclipse项目文件</p>
+<p>mvn jetty:run 启动jetty服务</p>
+<p>mvn tomcat:run 启动tomcat服务</p>
+<p>mvn clean package -Dmaven.test.skip=true:清除以前的包后重新打包，跳过测试类</p>
+<h2 id="使用Maven的好处"><a href="#使用Maven的好处" class="headerlink" title="使用Maven的好处"></a>使用Maven的好处</h2><ul>
+<li>节省空间<ul>
+<li>传统项目每个工程使用单独的jar包空间</li>
+<li>使用了Maven可以对所以工程的jar包进行统一管理</li>
 </ul>
-<p>当用户打开浏览器，访问某个网站时，服务器就会在服务器的内存中为该浏览器分配一个空间，该空间被这个浏览器独占，这个空间就是Session。Session的数据默认存在时间为30分钟（Tomcat），也可以自行修改。</p>
-<h3 id="1-2、Session可以用来做什么？"><a href="#1-2、Session可以用来做什么？" class="headerlink" title="1.2、Session可以用来做什么？"></a>1.2、Session可以用来做什么？</h3><p>1、 网上商城中的购物车</p>
-<p>2、 保存登录的用户信息</p>
-<p>3、 将某些数据放到session中，供同一用户的各个页面使用</p>
-<p>4、 防止用户的非法登录到某个页面</p>
-<p>5、 ……….很多很多😄</p>
-<h4 id="如何使用session"><a href="#如何使用session" class="headerlink" title="如何使用session"></a>如何使用session</h4><ul>
-<li>获得session</li>
+</li>
+<li>依赖管理<ul>
+<li>多个项目共享一份Maven仓库的jar包，所有项目依赖于Maven仓库</li>
+<li>对jar包的管理更方便</li>
 </ul>
-<p><code>HttpSession session = request.getSession();</code></p>
-<pre><code>//参数为true时,若存在会话,则返回该会话,否则 new 一个会话;
-//参数为false时,如存在会话,则返回该会话,否则返回NULL;
-getSession(boolean flag)
+</li>
+<li>项目的一键式构建<ul>
+<li>编译、测试(junit)、运行、打包、部署一键式</li>
+<li>mvn tomcat:run就能把项目跑起来</li>
+</ul>
+</li>
+<li>跨平台<ul>
+<li>因为Maven是纯Java开发的，所以可以跨平台</li>
+</ul>
+</li>
+<li>企业团队协作开发</li>
+</ul>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><p><strong>下载：</strong><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">https://maven.apache.org/download.cgi</a></p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813195900145.png" style="zoom: 33%;" />
 
-getSession()相当于getSession(true);</code></pre><ul>
-<li>添加值到session</li>
-</ul>
-<p><code>session.setAttribute(String name,Objct val);</code></p>
+<p>直接解压到一个<strong>没有中文没有空格</strong>的文件夹里。</p>
+<h3 id="Maven仓库"><a href="#Maven仓库" class="headerlink" title="Maven仓库"></a>Maven仓库</h3><h4 id="Maven的默认本地仓库"><a href="#Maven的默认本地仓库" class="headerlink" title="Maven的默认本地仓库"></a>Maven的默认本地仓库</h4><p>默认路径：<code>C:\用户\用户名\.m2\repository</code></p>
+<p>我们可以在apache-maven-3.6.3的<strong>同级目录</strong>新建本地仓库，命名为：repository</p>
+<blockquote>
+<p>repository       n.仓库;贮藏室;存放处;学识渊博的人;智囊;知识宝典</p>
+</blockquote>
+<p>修改本地仓库路径，需要在<code>G:\Maven\apache-maven-3.6.3\conf\settings.xml</code>下添加：</p>
+<pre><code>  &lt;!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;
+  --&gt;
+&lt;!-- 找到上面这段注释，在它底下配置自己新建的本地仓库文件夹路径 --&gt;
+&lt;localRepository&gt;G:\Maven\repository&lt;/localRepository&gt;</code></pre><hr>
+<h4 id="Maven的仓库类型"><a href="#Maven的仓库类型" class="headerlink" title="Maven的仓库类型"></a>Maven的仓库类型</h4><ul>
+<li><p>本地仓库</p>
 <ul>
-<li>从session中获得属性值</li>
+<li>自己维护</li>
+<li>本地仓库的配置，只需要修改maven软件目录中setting.xml文件就可以了</li>
 </ul>
-<p><code>String name = session.getAttribute(String name);</code></p>
+</li>
+<li><p>远程仓库（私服）</p>
 <ul>
-<li>从session中删除某个属性</li>
+<li>公司团队维护</li>
 </ul>
-<p><code>session.removeAttribute(String name);</code></p>
+</li>
+<li><p>中央仓库</p>
 <ul>
-<li>设置Session的存活期限： </li>
+<li>maven团队维护</li>
 </ul>
-<p><code>setMaxInactiveInterval(int interval);</code>  </p>
-<p>设置请求间隔时间（单位是秒），当浏览器超出interval秒还没有请求该应用的话就清除该Session。（如果在设定时间内访问，则会从最后一次访问时间点重新开始计算存活时间）</p>
-<p>注意：如果interval为0或负则表示Session可以无限存活（除非关闭Web容器）</p>
+</li>
+</ul>
 <hr>
-<h2 id="二、Cookie"><a href="#二、Cookie" class="headerlink" title="二、Cookie"></a>二、Cookie</h2><h3 id="2-1、Cookie的起源"><a href="#2-1、Cookie的起源" class="headerlink" title="2.1、Cookie的起源"></a>2.1、Cookie的起源</h3><p>Cookie最早出现在网景公司的雇员Lou Montulli在1993年的时候发明。</p>
-<p>​        Cookie是由服务器端生成，一般发送给浏览器，<strong>浏览器会将cookie的key/value保存到某个目录下</strong>的文本中。Cookie名称和值可以由服务器端自定义，对于JSP而言也可以直接写入jsessionid，这样服务器可以知道该用户是否合法用户以及是否需要重新登录。</p>
-<h4 id="Cookie使用"><a href="#Cookie使用" class="headerlink" title="Cookie使用"></a>Cookie使用</h4><p>1、 创建cookie（服务端创建）</p>
-<p><code>Cookie cook = new Cookie(String key,String value);</code></p>
-<p>2、 将创建好的cookie添加到客户端</p>
-<p><code>response.addCookie(cook);</code></p>
-<p>3、 如何读取cookie(从客户端读取到服务端中)</p>
-<p><code>request.getCookies();</code></p>
-<pre><code>//获取cookie，cookie可能是多个，所以返回一组cookie
-Cookie[] cook = request.getCookies();
+<h3 id="在IDEA中配置："><a href="#在IDEA中配置：" class="headerlink" title="在IDEA中配置："></a>在IDEA中配置：</h3><p>IntelliJ IDEA 2019.2.4 x64：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813213145828.png" style="zoom: 25%;" />
 
-if(cook!=null){
-    for(int i=0;i&lt;cook.length;i++){
-        //获得cookie中的元素
-        Cookie co = cook[i];
-        //通过判断是否有需要的cookie，co.getName()获得cookie的名字
-        if(co.getName().equals(&quot;name&quot;)){
-            name = co.getValue();    //读取用户名
-            co.setMaxAge(0);    //时效为0，cookie失效
-        }
-        if(co.getName().equals(&quot;pwd&quot;)){
-            pwd = co.getValue();    //读取密码
-            co.setMaxAge(0);    //时效为0，cookie失效
-        }
-    }
-}</code></pre><p>4、 设置cookie存在时间</p>
-<p>Cooker.setMaxAge(秒)</p>
-<p>5、 删除cookie，将cookie的SetMaxAge时间设置为0</p>
-<h4 id="Cookie的生命周期"><a href="#Cookie的生命周期" class="headerlink" title="Cookie的生命周期"></a>Cookie的生命周期</h4><ul>
-<li>Cookie可以保持登录信息到用户下次与服务器的会话<ul>
-<li>换句话说，下次访问同一网站时，用户不必输入用户名和密码就可以登陆了。</li>
-</ul>
-</li>
-<li>Cookie在生成时就会<strong>被指定一个expire值</strong>，这就是cookie的生命周期，超出周期cookie就会被清除。<ul>
-<li>有些页面将cookie的生存周期设置为0，这样在关闭页面是，就马上清除cookie，不会记录用户信息，更加安全。</li>
-</ul>
-</li>
-</ul>
-<h4 id="Cookie的优缺点"><a href="#Cookie的优缺点" class="headerlink" title="Cookie的优缺点"></a>Cookie的优缺点</h4><ul>
-<li>优点</li>
-</ul>
-<p><strong>方便用户登陆网站</strong>——保存有用户信息，可用于自动登陆等</p>
-<p><strong>独立的Cookie空间</strong>——在一台计算机中安装多个浏览器，每个浏览器都会在各自独立的空间存放cookie。cookie中不但可以确认用户，还能包含计算机信息和浏览器信息，所以一个用户用不同的浏览器登录或使用不同的计算机登录，都会得到不同的cookie信息。</p>
+<p>2019版的idea要进行设置，如果在项目内点Settings，只会对那个项目有效。要做启动页这里点，或者点项目内的Settings for New Projects。（2018的点Default Settings）</p>
+<p>然后，搜索或者手动寻找点击Maven：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813213741070.png" style="zoom:25%;" />
+
+<p>修改上面3个地方，如果settings.xml设置了本地仓库，修改前面2个，第3个自动会修改。</p>
+<p>接着，打开Importing，勾上：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813214026404.png" style="zoom:40%;" />
+
+<p>这样，在修改pom.xml后，会自动导包。没勾上的话，修改pom时会提示import，手动点击导入。</p>
+<p>还有，Runner的VM Options可以加上<code>-Dmaven.wagon.http.ssl.insecure=true -Dmaven.wagon.http.ssl.allowall=true -Dmaven.wagon.http.ssl.ignore.validity.dates=true</code>。加上后可以忽略ssl 验证。</p>
+<p>✔至于使用，下一篇里再说~</p>
+<h3 id="在Eclipse中配置："><a href="#在Eclipse中配置：" class="headerlink" title="在Eclipse中配置："></a>在Eclipse中配置：</h3><p>基于Eclipse 2018-09</p>
+<p>在Windows的Preferences下，找到Maven点击展开，选择User Settings，修改本地的仓库：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813214801858.png" style="zoom:40%;" />
+
+<p>接着，找到Maven下的Installations，添加：</p>
+<img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/image-20200813214855650.png" style="zoom:50%;" />
+
+<p>收工。</p>
+<p>🙋‍♂️如何使用在下一篇~</p>
+<h2 id="配置阿里云Maven仓库镜像"><a href="#配置阿里云Maven仓库镜像" class="headerlink" title="配置阿里云Maven仓库镜像"></a>配置阿里云Maven仓库镜像</h2><blockquote>
+<p>先说mirrors中mirror的作用，mirrors允许配置多个镜像mirror，mirror的作用一般是为了使用一个更快速度的镜像，主要是访问速度的考虑，或者突破屏蔽使用可以访问的镜像。</p>
+</blockquote>
+<p>需要在<code>G:\Maven\apache-maven-3.6.3\conf\settings.xml</code>下添加：</p>
+<pre><code>  &lt;mirrors&gt;
+    &lt;!-- mirror
+     | Specifies a repository mirror site to use instead of a given repository. The repository that
+     | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
+     | for inheritance and direct lookup purposes, and must be unique across the set of mirrors.
+     |
+    &lt;mirror&gt;
+      &lt;id&gt;mirrorId&lt;/id&gt;
+      &lt;mirrorOf&gt;repositoryId&lt;/mirrorOf&gt;
+      &lt;name&gt;Human Readable Name for this Mirror.&lt;/name&gt;
+      &lt;url&gt;http://my.repository.com/repo/path&lt;/url&gt;
+    &lt;/mirror&gt;
+     --&gt;
+    &lt;mirror&gt;
+      &lt;id&gt;aliyunmaven&lt;/id&gt;
+      &lt;mirrorOf&gt;central&lt;/mirrorOf&gt;
+      &lt;name&gt;AliyunMaven&lt;/name&gt;
+      &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+    &lt;/mirror&gt;
+  &lt;/mirrors&gt;</code></pre><p>在<code>&lt;mirrors&gt;&lt;/mirrors&gt;</code>标签内，按提示添加，收工。</p>
 <ul>
-<li>缺点</li>
+<li><p>id：该镜像的唯一标识符</p>
+<ul>
+<li>id用来区分不同的mirror元素。</li>
 </ul>
-<p><strong>识别不精确</strong>——对于在同一台计算机上使用同一浏览器的多用户群，cookie不会区分他们的身份，除非他们使用不同的用户名登录</p>
-<p><strong>个人隐私和安全</strong>——因为会保存计算机信息和用户信息，这些都为敏感信息，有可能会被泄露</p>
+</li>
+<li><p>mirrorOf：<strong>被镜像</strong>的服务器的id。</p>
+<ul>
+<li><p>如果设置为：<em>，就代表通过*</em>访问阿里云的maven仓库<strong>从而访问网路上</strong>所有的远程仓库**</p>
+</li>
+<li><p>如果配置为：central，就代表我们<strong>访问阿里云的central仓库</strong>，就是阿里的<strong>中央库</strong>，中央库找不到，再去maven中央库。（覆盖了Maven自带的central）</p>
+<blockquote>
+<p>Maven中央仓库的id为central，远程url地址为<a href="http://repo.maven.apache.org/maven2" target="_blank" rel="noopener">http://repo.maven.apache.org/maven2</a></p>
+</blockquote>
+</li>
+<li><p>如果配置为：repo1，就代表通过阿里云访问<a href="http://repo1.maven.org/maven2" target="_blank" rel="noopener">http://repo1.maven.org/maven2</a></p>
+</li>
+</ul>
+</li>
+<li><p>name：镜像名称（随意命名）</p>
+</li>
+<li><p>url：该镜像的URL。构建系统会优先考虑使用该URL，而非使用默认的服务器URL。</p>
+</li>
+</ul>
+<blockquote>
+<p>maven的镜像地址：</p>
+<p><a href="http://maven.ibiblio.org/maven2/" target="_blank" rel="noopener">http://maven.ibiblio.org/maven2/</a><br><a href="http://central.maven.org/maven2/" target="_blank" rel="noopener">http://central.maven.org/maven2/</a><br><a href="http://repo1.maven.apache.org/maven2/" target="_blank" rel="noopener">http://repo1.maven.apache.org/maven2/</a><br><a href="http://repo1.maven.org/maven2/" target="_blank" rel="noopener">http://repo1.maven.org/maven2/</a><br><a href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" target="_blank" rel="noopener">http://mirrors.ibiblio.org/pub/mirrors/maven2/</a><br><a href="https://repository.jboss.org/nexus/content/groups/public/" target="_blank" rel="noopener">https://repository.jboss.org/nexus/content/groups/public/</a><br><a href="http://repo2.maven.org/maven2/" target="_blank" rel="noopener">http://repo2.maven.org/maven2/</a></p>
+</blockquote>
+<h2 id="关于默认pom-xml"><a href="#关于默认pom-xml" class="headerlink" title="关于默认pom.xml"></a>关于默认pom.xml</h2><p><code>maven&lt;repositories&gt;标签,&lt;pluginRepositories&gt;标签</code>文章：<a href="https://www.cnblogs.com/tinyj/p/9803081.html" target="_blank" rel="noopener">https://www.cnblogs.com/tinyj/p/9803081.html</a></p>
+<blockquote>
+<p>maven私有库神坑之：“Downloading: <a href="http://repo.maven.apache.org/maven2/”" target="_blank" rel="noopener">http://repo.maven.apache.org/maven2/”</a></p>
+</blockquote>
+<p>所有自定义pom.xml都是继承自super pom：</p>
+<p><a href="http://maven.apache.org/ref/3.0.4/maven-model-builder/super-pom.html" target="_blank" rel="noopener">http://maven.apache.org/ref/3.0.4/maven-model-builder/super-pom.html</a></p>
+<pre><code>&lt;project&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;repositories&gt;
+    &lt;repository&gt;
+      &lt;id&gt;central&lt;/id&gt;
+      &lt;name&gt;Central Repository&lt;/name&gt;
+      &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
+      &lt;layout&gt;default&lt;/layout&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;false&lt;/enabled&gt;
+      &lt;/snapshots&gt;
+    &lt;/repository&gt;
+  &lt;/repositories&gt;
+
+  &lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+      &lt;id&gt;central&lt;/id&gt;
+      &lt;name&gt;Central Repository&lt;/name&gt;
+      &lt;url&gt;http://repo.maven.apache.org/maven2&lt;/url&gt;
+      &lt;layout&gt;default&lt;/layout&gt;
+      &lt;snapshots&gt;
+        &lt;enabled&gt;false&lt;/enabled&gt;
+      &lt;/snapshots&gt;
+      &lt;releases&gt;
+        &lt;updatePolicy&gt;never&lt;/updatePolicy&gt;
+      &lt;/releases&gt;
+    &lt;/pluginRepository&gt;
+  &lt;/pluginRepositories&gt;
+
+  ......
+
+&lt;/project&gt;</code></pre><p>因此，当maven项目需要下载一些metadata、pom、jar的时候，会优先去中央仓库下载，导致内网用户各种报错！</p>
+<h4 id="解决办法："><a href="#解决办法：" class="headerlink" title="解决办法："></a>解决办法：</h4><p>在项目pom.xml中添加如下配置：</p>
+<pre><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;central&lt;/id&gt;
+        &lt;url&gt;http://host:port/content/groups/public&lt;/url&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+
+&lt;pluginRepositories&gt;
+    &lt;pluginRepository&gt;
+        &lt;id&gt;central&lt;/id&gt;
+        &lt;url&gt;http://host:port/content/groups/public&lt;/url&gt;
+    &lt;/pluginRepository&gt;
+&lt;/pluginRepositories&gt;</code></pre><p>或者在maven的setting.xml中配置mirror<code>&lt;mirrorOf&gt;central&lt;/mirrorOf&gt;</code></p>
 <hr>
-<h2 id="三、Session和Cookie的区别"><a href="#三、Session和Cookie的区别" class="headerlink" title="三、Session和Cookie的区别"></a>三、Session和Cookie的区别</h2><h3 id="3-1、存在的位置"><a href="#3-1、存在的位置" class="headerlink" title="3.1、存在的位置"></a>3.1、存在的位置</h3><ul>
-<li>Session对象保存在<strong>服务器</strong>内存中</li>
-<li>Cookie对象保存在<strong>客户端</strong>的硬盘或内存中</li>
-</ul>
-<h3 id="3-2、安全性"><a href="#3-2、安全性" class="headerlink" title="3.2、安全性"></a>3.2、安全性</h3><ul>
-<li>Session的安全性较高，因为它存放于服务端</li>
-<li>Cookie安全性相对较低，因为它保存在客户端，任何人都可以获得你的账号和密码</li>
-</ul>
-<h3 id="3-3、网络传输"><a href="#3-3、网络传输" class="headerlink" title="3.3、网络传输"></a>3.3、网络传输</h3><ul>
-<li>Session因为保存在服务端，不需要传输</li>
-<li>cookie保存在客户端，需要进行网络传输</li>
-</ul>
-<h3 id="3-4、生命周期"><a href="#3-4、生命周期" class="headerlink" title="3.4、生命周期"></a>3.4、生命周期</h3><ul>
-<li><p>Session的生命周期是一个<strong>间隔</strong>，从创建的时候开始计时</p>
-<ul>
-<li>如果在生命周期内没有访问Session，那么Session无效</li>
-<li>如果在生命周期内访问Session，那么它的生命周期<strong>重新计算</strong></li>
-</ul>
-</li>
-<li><p>Cookie的生命周期是<strong>累计</strong>的，从创建的时候开始计时</p>
-<ul>
-<li>生命周期到了之后Cookie的生命周期结束，cookie就无效了</li>
-<li>就算周期内再访问，也<strong>不会重新计时</strong>，不会刷新</li>
-</ul>
-</li>
-</ul>
+<h2 id="阿里云官方maven-配置指南"><a href="#阿里云官方maven-配置指南" class="headerlink" title="阿里云官方maven 配置指南"></a>阿里云官方maven 配置指南</h2><p><strong>阿里云的仓库服务地址</strong>：<a href="https://maven.aliyun.com/mvn/guide" target="_blank" rel="noopener">https://maven.aliyun.com/mvn/guide</a></p>
+<p>打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 <strong>conf/settings.xml</strong> ），在<code>&lt;mirrors&gt;&lt;/mirrors&gt;</code>标签中添加 mirror 子节点:</p>
+<pre><code>&lt;mirror&gt;
+  &lt;id&gt;aliyunmaven&lt;/id&gt;
+  &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;
+  &lt;name&gt;阿里云公共仓库&lt;/name&gt;
+  &lt;url&gt;https://maven.aliyun.com/repository/public&lt;/url&gt;
+&lt;/mirror&gt;</code></pre><p>如果想使用其它代理仓库，可在<code>&lt;repositories&gt;&lt;/repositories&gt;</code>节点中加入对应的仓库使用地址。以使用 spring 代理仓为例：</p>
+<pre><code>&lt;repository&gt;
+  &lt;id&gt;spring&lt;/id&gt;
+  &lt;url&gt;https://maven.aliyun.com/repository/spring&lt;/url&gt;
+  &lt;releases&gt;
+    &lt;enabled&gt;true&lt;/enabled&gt;
+  &lt;/releases&gt;
+  &lt;snapshots&gt;
+    &lt;enabled&gt;true&lt;/enabled&gt;
+  &lt;/snapshots&gt;
+&lt;/repository&gt;</code></pre><p>在你的 <strong>pom.xml</strong> 文件<code>&lt;denpendencies&gt;&lt;/denpendencies&gt;</code>节点中加入你要引用的文件信息：</p>
+<pre><code>&lt;dependency&gt;
+  &lt;groupId&gt;[GROUP_ID]&lt;/groupId&gt;
+  &lt;artifactId&gt;[ARTIFACT_ID]&lt;/artifactId&gt;
+  &lt;version&gt;[VERSION]&lt;/version&gt;
+&lt;/dependency&gt;</code></pre><p>执行拉取命令：</p>
+<pre><code>mvn install</code></pre><hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/tinyj/p/9803081.html" target="_blank" rel="noopener">maven标签</a></p>
+<p><a href="https://blog.csdn.net/isea533/article/details/21560089" target="_blank" rel="noopener">Maven settings配置中的mirrorOf</a></p>
+<p><a href="https://blog.csdn.net/qq_31071543/article/details/81564562" target="_blank" rel="noopener">Maven mirrorOf配置</a></p>
+<p><a href="https://www.cnblogs.com/kelelipeng/p/11733903.html" target="_blank" rel="noopener">浅谈maven setting.xml 设置的mirrorof标签作用</a></p>
+<p><a href="www.mamicode.com/info-detail-2623324.html">maven 中的mirror详解</a></p>
 
             </div>
             <hr/>
@@ -538,7 +658,7 @@ if(cook!=null){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coderuan.github.io/2020/07/19/session-he-cookie/">https://coderuan.github.io/2020/07/19/session-he-cookie/</a>
+                    <a href="https://coderuan.github.io/2020/08/13/maven-an-zhuang/">https://coderuan.github.io/2020/08/13/maven-an-zhuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -576,16 +696,12 @@ if(cook!=null){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/Maven/">
+                                    <span class="chip bg-color">Maven</span>
                                 </a>
                             
-                                <a href="/tags/%E5%90%8E%E5%8F%B0/">
-                                    <span class="chip bg-color">后台</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                                    <span class="chip bg-color">基础</span>
+                                <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">工具</span>
                                 </a>
                             
                         </div>
@@ -1016,53 +1132,51 @@ if(cook!=null){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/19/tcp-ip/">
+                <a href="/2020/08/13/maven-an-zhuang/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/emotion/high/high011.jpg" class="responsive-img" alt="TCP/IP简述">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/Maven/maven-logo-black-on-white.png" class="responsive-img" alt="Maven项目对象模型">
                         
-                        <span class="card-title">TCP/IP简述</span>
+                        <span class="card-title">Maven项目对象模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            计算机网络基础记录(发动基础精通buff)
+                            Maven的安装和基本使用记录
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaEE/" class="post-category">
-                                    JavaEE
+                            <a href="/categories/Maven/" class="post-category">
+                                    Maven
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%9F%BA%E7%A1%80/">
-                        <span class="chip bg-color">基础</span>
+                    <a href="/tags/Maven/">
+                        <span class="chip bg-color">Maven</span>
                     </a>
                     
-                    <a href="/tags/%E5%8D%8F%E8%AE%AE/">
-                        <span class="chip bg-color">协议</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                        <span class="chip bg-color">网络</span>
+                    <a href="/tags/%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">工具</span>
                     </a>
                     
                 </div>
@@ -1076,30 +1190,30 @@ if(cook!=null){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/18/servlet-zhong-shi-yong-fen-ye/">
+                <a href="/2020/08/10/mybatis-gai-shu/">
                     <div class="card-image">
                         
-                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/ACG/wallhaven.jpg" class="responsive-img" alt="Servlet使用分页技术">
+                        <img src="https://tencentcloud-1302662658.cos.ap-guangzhou.myqcloud.com/MyBatis/mybatis-logo.jpg" class="responsive-img" alt="MyBatis框架概述">
                         
-                        <span class="card-title">Servlet使用分页技术</span>
+                        <span class="card-title">MyBatis框架概述</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Servlet中使用分页技术
+                            MyBatis框架学习记录(发动框架精通buff)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaEE/" class="post-category">
-                                    JavaEE
+                            <a href="/categories/%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    框架
                                 </a>
                             
                             
@@ -1117,12 +1231,12 @@ if(cook!=null){
                         <span class="chip bg-color">后台</span>
                     </a>
                     
-                    <a href="/tags/Servlet/">
-                        <span class="chip bg-color">Servlet</span>
+                    <a href="/tags/%E6%A1%86%E6%9E%B6/">
+                        <span class="chip bg-color">框架</span>
                     </a>
                     
-                    <a href="/tags/%E5%88%86%E9%A1%B5/">
-                        <span class="chip bg-color">分页</span>
+                    <a href="/tags/MyBatis/">
+                        <span class="chip bg-color">MyBatis</span>
                     </a>
                     
                 </div>
